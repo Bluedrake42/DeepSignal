@@ -1,260 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your New Flask App</title>
-
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Almarai:wght@800&amp;family=Nunito+Sans&amp;display=swap" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Newsletter Site</title>
 </head>
-
 <body>
-  <div class="container">
-    <div class="content">
-      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjY3IDE3NS4yIDE3Ni40IDE3Ni41IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDY3IDE3NS4yIDE3Ni40IDE3Ni41OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8ZyBpZD0iWE1MSURfMjI5XyI+DQoJPGcgaWQ9IlhNTElEXzY5MF8iPg0KCQk8ZyBpZD0iWE1MSURfNjkxXyI+DQoJCQk8Zz4NCgkJCQk8ZyBpZD0iWE1MSURfNDRfIj4NCgkJCQkJPGcgaWQ9IlhNTElEXzQ4XyI+DQoJCQkJCQk8cGF0aCBpZD0iWE1MSURfNDlfIiBjbGFzcz0ic3QwIiBkPSJNMTU1LjIsMzUxLjd2LTM0LjJjMzYuMiwwLDY0LjMtMzUuOSw1MC40LTc0Yy01LjEtMTQuMS0xNi40LTI1LjQtMzAuNS0zMC41DQoJCQkJCQkJYy0zOC4xLTEzLjgtNzQsMTQuMi03NCw1MC40bDAsMEg2N2MwLTU3LjcsNTUuOC0xMDIuNywxMTYuMy04My44YzI2LjQsOC4zLDQ3LjUsMjkuMyw1NS43LDU1LjcNCgkJCQkJCQlDMjU3LjksMjk1LjksMjEzLDM1MS43LDE1NS4yLDM1MS43eiIvPg0KCQkJCQk8L2c+DQoJCQkJCTxwb2x5Z29uIGlkPSJYTUxJRF80N18iIGNsYXNzPSJzdDAiIHBvaW50cz0iMTU1LjMsMzE3LjYgMTIxLjMsMzE3LjYgMTIxLjMsMjgzLjYgMTIxLjMsMjgzLjYgMTU1LjMsMjgzLjYgMTU1LjMsMjgzLjYgCQkJCQkNCgkJCQkJCSIvPg0KCQkJCQk8cG9seWdvbiBpZD0iWE1MSURfNDZfIiBjbGFzcz0ic3QwIiBwb2ludHM9IjEyMS4zLDM0My44IDk1LjEsMzQzLjggOTUuMSwzNDMuOCA5NS4xLDMxNy42IDEyMS4zLDMxNy42IAkJCQkJIi8+DQoJCQkJCTxwYXRoIGlkPSJYTUxJRF80NV8iIGNsYXNzPSJzdDAiIGQ9Ik05NS4xLDMxNy42SDczLjJsMCwwdi0yMS45bDAsMGgyMS45bDAsMFYzMTcuNnoiLz4NCgkJCQk8L2c+DQoJCQk8L2c+DQoJCTwvZz4NCgk8L2c+DQo8L2c+DQo8L3N2Zz4NCg==" alt="DigitalOcean Logo" width="100" />
-      <h1>Welcome to your new <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask App</a>!</h1>
+    <div class="particles" id="particles"></div>
+    <div class="container">
+        <div class="center-box">
+            <div class="header">
+                <div class="profile-pic">
+                    <div class="avatar">MP</div>
+                </div>
+                <div class="header-text">
+                    <h1>Mockup Creator Page</h1>
+                    <p>Placeholder Newsletter Design</p>
+                </div>
+            </div>
+            
+                         <div class="tags">
+                 <p>Placeholder content preferences:</p>
+                 <div class="tag-list">
+                     <label class="tag">
+                         <input type="checkbox" name="preferences" value="Mockup Category A">
+                         <span>Mockup Category A</span>
+                     </label>
+                     <label class="tag">
+                         <input type="checkbox" name="preferences" value="Placeholder Topic B">
+                         <span>Placeholder Topic B</span>
+                     </label>
+                     <label class="tag">
+                         <input type="checkbox" name="preferences" value="Sample Content C">
+                         <span>Sample Content C</span>
+                     </label>
+                     <label class="tag">
+                         <input type="checkbox" name="preferences" value="Demo Category D">
+                         <span>Demo Category D</span>
+                     </label>
+                 </div>
+             </div>
 
-      <p>
-        This application is an example of how to deploy a Flask Application to DigitalOcean's App
-        Platform. Check out their <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">documentation</a> to
-        learn more about flask.
-      </p>
-
+             <form id="emailForm">
+                 <input type="email" id="email" name="email" required placeholder="placeholder@email.com">
+                 <button type="submit">Subscribe</button>
+             </form>
+             
+             <div id="response" class="response"></div>
+        </div>
     </div>
 
-    <div class="links">
-      <a href="https://github.com/MasonEgger/python-slackbot-sampleapp" target="_blank"
-        rel="noopener noreferrer"><strong>Sample Slackbot using Flask</strong>
-        <span>Learn how to build a Slackbot in Python</span>
-      </a>
-      <a href="https://www.digitalocean.com/docs/app-platform/languages-frameworks/python/" target="_blank"
-        rel="noopener noreferrer"><strong>DigitalOcean App Platform Docs for Flask</strong>
-        <span>DigitalOcean's reference documentation for Flask</span>
-      </a>
-      <a href="https://www.digitalocean.com/docs/app-platform/" target="_blank" rel="noopener noreferrer"><strong>App
-          Platform Documentation</strong><span>Learn about DigitalOcean's App Platform</span></a>
-      <a href="https://www.digitalocean.com/docs/droplets/how-to/" target="_blank" rel="noopener noreferrer"><strong>App
-          Platform API Documentation</strong>
-        <span>REST API Documentation for App Platform</span>
-      </a>
-    </div>
-  </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <div id="stripes">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at center, #1a0000 0%, #0d0000 50%, #000000 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+        /* Particle background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-    body {
-      margin: 0;
-      padding: 50px;
-      min-height: 100vh;
-      position: relative;
-      color: #fff;
-      font-family: "Nunito Sans", sans-serif;
-      font-size: 19px;
-    }
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Almarai", sans-serif;
-    }
+        .particle.connected {
+            background: rgba(0, 123, 255, 0.6);
+        }
 
-    :root {
-      --background: linear-gradient(150deg,
-          #17acff 15%,
-          #016aff 70%,
-          #68a6ff 94%);
-      --first: #53f;
-      --second: #4553ff;
-      --third: #4f40ff;
-      --fourth: #25ddf5;
-      --fifth: #1fa2ff;
-    }
+        .connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(0, 123, 255, 0.2), transparent);
+            pointer-events: none;
+        }
 
-    #stripes {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100vw;
-      display: grid;
-      background: var(--background);
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      transform: skewY(-12deg);
-      transform-origin: 0;
-    }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
 
-    #stripes span {
-      /* border: 1px solid #c00c00; */
-    }
+        .center-box {
+            background: rgba(20, 5, 5, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(255, 0, 0, 0.1), 0 0 80px rgba(255, 0, 0, 0.05);
+            border: 1px solid rgba(255, 100, 100, 0.15);
+            text-align: center;
+        }
 
-    #stripes span:first-child {
-      grid-column: span 1;
-      background: var(--first);
-    }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
 
-    #stripes span:nth-child(2) {
-      grid-column: span 2;
-      background: var(--second);
-    }
+        .profile-pic {
+            flex-shrink: 0;
+        }
 
-    #stripes span:nth-child(3) {
-      grid-column: span 2;
-      background: var(--third);
-    }
+        .avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
 
-    #stripes span:nth-child(4) {
-      grid-column: 6;
-      grid-row: 3;
-      background: var(--fourth);
-    }
+        .header-text {
+            text-align: left;
+        }
 
-    #stripes span:nth-child(5) {
-      grid-column: span 2;
-      grid-row: 4;
-      background: var(--fifth);
-    }
+        .header-text h1 {
+            margin-bottom: 4px;
+            font-size: 26px;
+        }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 50px 0;
-    }
+        .header-text p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #aaa;
+        }
 
-    .content {
-      text-align: center;
-    }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #fff;
+            font-weight: 600;
+        }
 
-    h1 {
-      font-size: 2.5rem;
-    }
+        p {
+            color: #aaa;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
 
-    h1 a {
-      color: #dbf1f5;
-    }
+        form {
+            margin-bottom: 24px;
+        }
 
-    h1 a:hover {
-      color: #7decff;
-    }
+        input[type="email"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: rgba(40, 10, 10, 0.8);
+            color: #fff;
+        }
 
-    p {
-      margin-bottom: 50px;
-    }
-     p a {
-      color:chartreuse;
-    }
-    
-    li {
-      text-align: left
-    }
+        input[type="email"]::placeholder {
+            color: #cc8888;
+        }
 
-    code {
-      display: inline-block;
-      padding: 3px 6px;
-      margin-left: 3px;
-      margin-right: 3px;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      background: #1a2279;
-      color: #dbf1f5;
-    }
+        input[type="email"]:focus {
+            border-color: #ff4444;
+            box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.2);
+        }
 
-    .links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
 
-    .links a {
-      position: relative;
-      display: block;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 5px;
-      padding: 20px;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: #222;
-      transition: 0.3s ease all;
-      overflow: hidden;
-    }
+        button:hover {
+            background: linear-gradient(135deg, #dd3a47, #bb252f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(204, 41, 54, 0.4);
+        }
 
-    .links a:before,
-    .links a:after {
-      font-size: 40px;
-      display: block;
-      position: absolute;
-    }
+        .response {
+            margin-bottom: 24px;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: none;
+        }
 
-    .links a:before {
-      content: "";
-      top: -80%;
-      right: -150px;
-      width: 250px;
-      height: 250px;
-      background: rgba(125, 236, 255, 0.6);
-      pointer-events: none;
-      transform: rotate(-25deg);
-      transition: 0.4s cubic-bezier(0.34, 0.31, 0, 1.81) transform;
-    }
+        .response.success {
+            background: rgba(40, 167, 69, 0.2);
+            color: #4caf50;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
 
-    .links a:after {
-      content: "👉";
-      top: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      right: 30px;
-      transform: translateX(80px);
-      transition: 0.3s cubic-bezier(0.34, 0.31, 0, 1.81) transform;
-    }
+        .response.error {
+            background: rgba(220, 53, 69, 0.2);
+            color: #f44336;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
 
-    .links a:hover {
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
-    }
+                 .tags {
+             margin-bottom: 36px;
+         }
 
-    .links a:hover:before {
-      transform: rotate(-25deg) translateX(60px);
-    }
+         .tags p {
+             font-size: 13px;
+             color: #ccaaaa;
+             margin-bottom: 20px;
+             text-transform: uppercase;
+             letter-spacing: 0.5px;
+             font-weight: 500;
+         }
 
-    .links a:hover:after {
-      transform: none;
-    }
+         .tag-list {
+             display: grid;
+             grid-template-columns: repeat(2, 1fr);
+             gap: 12px;
+             max-width: 100%;
+         }
 
-    .links a strong,
-    .links a span {
-      position: relative;
-      z-index: 1;
-    }
+         .tag {
+             display: flex;
+             align-items: center;
+             justify-content: flex-start;
+             gap: 10px;
+             padding: 12px 16px;
+             background: rgba(20, 8, 8, 0.8);
+             border: 1px solid rgba(255, 100, 100, 0.2);
+             border-radius: 8px;
+             font-size: 13px;
+             cursor: pointer;
+             transition: all 0.3s ease;
+             user-select: none;
+             color: #ddaaaa;
+             position: relative;
+             min-height: 44px;
+         }
 
-    .links a strong {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-    }
+         .tag:hover {
+             background: rgba(40, 15, 15, 0.9);
+             border-color: rgba(255, 100, 100, 0.4);
+             transform: translateY(-1px);
+         }
 
-    .links a span {
-      color: #787878;
-      font-size: 0.9rem;
-    }
-  </style>
+         .tag input[type="checkbox"] {
+             width: 16px;
+             height: 16px;
+             margin: 0;
+             appearance: none;
+             -webkit-appearance: none;
+             background: rgba(10, 5, 5, 0.8);
+             border: 1px solid rgba(255, 100, 100, 0.3);
+             border-radius: 3px;
+             cursor: pointer;
+             position: relative;
+             transition: all 0.3s ease;
+         }
+
+         .tag input[type="checkbox"]:hover {
+             border-color: rgba(255, 100, 100, 0.5);
+             background: rgba(20, 10, 10, 0.9);
+         }
+
+         .tag input[type="checkbox"]:checked {
+             background: linear-gradient(135deg, #cc2936, #aa1e2a);
+             border-color: #cc2936;
+             box-shadow: 0 0 8px rgba(204, 41, 54, 0.4);
+         }
+
+         .tag input[type="checkbox"]:checked::after {
+             content: '✓';
+             position: absolute;
+             top: -2px;
+             left: 2px;
+             font-size: 12px;
+             color: white;
+             font-weight: bold;
+         }
+
+         .tag span {
+             display: block;
+             font-weight: 500;
+             flex: 1;
+         }
+
+         .tag:has(input:checked) {
+             background: linear-gradient(135deg, #cc2936, #aa1e2a);
+             color: white;
+             border-color: #cc2936;
+             box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+             transform: translateY(-2px);
+         }
+
+        @media (max-width: 600px) {
+            .center-box {
+                padding: 24px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+
+            .tag-list {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 8px;
+            }
+
+            .tag {
+                padding: 10px 12px;
+                font-size: 12px;
+                min-height: 40px;
+            }
+        }
+    </style>
+
+    <script>
+        // Enhanced particle system with pulsing and better visuals
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.createElement('canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.time = 0;
+                this.mouse = { x: 0, y: 0 };
+                
+                this.setup();
+                this.createParticles();
+                this.addMouseTracking();
+                this.animate();
+            }
+            
+            setup() {
+                const container = document.getElementById('particles');
+                container.appendChild(this.canvas);
+                
+                this.canvas.style.position = 'absolute';
+                this.canvas.style.top = '0';
+                this.canvas.style.left = '0';
+                this.canvas.style.pointerEvents = 'none';
+                
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                this.particles = [];
+                this.createParticles();
+            }
+            
+            addMouseTracking() {
+                window.addEventListener('mousemove', (e) => {
+                    this.mouse.x = e.clientX;
+                    this.mouse.y = e.clientY;
+                });
+            }
+            
+                         createParticles() {
+                 this.particles = []; // Clear existing particles
+                 const numParticles = Math.min(80, Math.floor((window.innerWidth * window.innerHeight) / 15000));
+                 
+                 for (let i = 0; i < numParticles; i++) {
+                     this.particles.push({
+                         x: Math.random() * this.canvas.width,
+                         y: Math.random() * this.canvas.height,
+                         vx: (Math.random() - 0.5) * 0.4,
+                         vy: (Math.random() - 0.5) * 0.4,
+                         size: Math.random() * 1.5 + 0.5,
+                         baseSize: Math.random() * 1.5 + 0.5,
+                         pulse: Math.random() * Math.PI * 2,
+                         pulseSpeed: 0.01 + Math.random() * 0.02,
+                         opacity: 0.15 + Math.random() * 0.25,
+                         hue: 350 + Math.random() * 20, // Deep red spectrum
+                         age: 0,
+                         maxAge: 800 + Math.random() * 400, // Random lifespan
+                         fadeOut: false
+                     });
+                 }
+             }
+
+             createNewParticle() {
+                 return {
+                     x: Math.random() * this.canvas.width,
+                     y: Math.random() * this.canvas.height,
+                     vx: (Math.random() - 0.5) * 0.8, // Higher initial momentum
+                     vy: (Math.random() - 0.5) * 0.8,
+                     size: Math.random() * 1.5 + 0.5,
+                     baseSize: Math.random() * 1.5 + 0.5,
+                     pulse: Math.random() * Math.PI * 2,
+                     pulseSpeed: 0.01 + Math.random() * 0.02,
+                     opacity: 0.15 + Math.random() * 0.25,
+                     hue: 350 + Math.random() * 20,
+                     age: 0,
+                     maxAge: 800 + Math.random() * 400,
+                     fadeOut: false
+                 };
+             }
+            
+            animate() {
+                this.time += 0.016;
+                
+                // Create slight motion blur effect
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                                // Update particles
+                for (let i = this.particles.length - 1; i >= 0; i--) {
+                    const particle = this.particles[i];
+                    
+                    // Age the particle
+                    particle.age++;
+                    
+                    // Start fading when approaching max age
+                    if (particle.age > particle.maxAge * 0.8) {
+                        particle.fadeOut = true;
+                    }
+                    
+                    // Update position
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    // Gentle mouse attraction
+                    const mouseDistance = Math.sqrt(
+                        Math.pow(particle.x - this.mouse.x, 2) + 
+                        Math.pow(particle.y - this.mouse.y, 2)
+                    );
+                    
+                    if (mouseDistance < 120) {
+                        const attraction = (120 - mouseDistance) / 120 * 0.0001;
+                        particle.vx += (this.mouse.x - particle.x) * attraction;
+                        particle.vy += (this.mouse.y - particle.y) * attraction;
+                    }
+                   
+                    // Apply lighter friction to maintain momentum longer
+                    particle.vx *= 0.9995;
+                    particle.vy *= 0.9995;
+                    
+                    // Add small random impulses to prevent stagnation
+                    if (Math.random() < 0.005) {
+                        particle.vx += (Math.random() - 0.5) * 0.1;
+                        particle.vy += (Math.random() - 0.5) * 0.1;
+                    }
+                    
+                    // Wrap around edges
+                    if (particle.x < -10) particle.x = this.canvas.width + 10;
+                    if (particle.x > this.canvas.width + 10) particle.x = -10;
+                    if (particle.y < -10) particle.y = this.canvas.height + 10;
+                    if (particle.y > this.canvas.height + 10) particle.y = -10;
+                    
+                    // Update pulse
+                    particle.pulse += particle.pulseSpeed;
+                    particle.size = particle.baseSize + Math.sin(particle.pulse) * 0.2;
+                    
+                    // Handle fading
+                    if (particle.fadeOut) {
+                        const fadeProgress = (particle.age - particle.maxAge * 0.8) / (particle.maxAge * 0.2);
+                        particle.opacity *= (1 - fadeProgress * 0.1);
+                    }
+                    
+                    // Remove dead particles and replace with new ones
+                    if (particle.age >= particle.maxAge || particle.opacity <= 0.01) {
+                        this.particles.splice(i, 1);
+                        this.particles.push(this.createNewParticle());
+                    }
+                }
+                
+                // Draw connections with gradient and varying opacity
+                this.particles.forEach((particle, i) => {
+                    this.particles.slice(i + 1).forEach(otherParticle => {
+                        const dx = particle.x - otherParticle.x;
+                        const dy = particle.y - otherParticle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                                                 if (distance < 100) {
+                             const opacity = (100 - distance) / 100 * 0.15;
+                             const gradient = this.ctx.createLinearGradient(
+                                 particle.x, particle.y, 
+                                 otherParticle.x, otherParticle.y
+                             );
+                             
+                             gradient.addColorStop(0, `hsla(${particle.hue}, 60%, 40%, ${opacity})`);
+                             gradient.addColorStop(1, `hsla(${otherParticle.hue}, 60%, 40%, ${opacity})`);
+                             
+                             this.ctx.beginPath();
+                             this.ctx.strokeStyle = gradient;
+                             this.ctx.lineWidth = Math.max(0.3, (100 - distance) / 100 * 1);
+                             this.ctx.moveTo(particle.x, particle.y);
+                             this.ctx.lineTo(otherParticle.x, otherParticle.y);
+                             this.ctx.stroke();
+                         }
+                    });
+                });
+                
+                                 // Draw particles with subtle glow effect
+                 this.particles.forEach(particle => {
+                     const gradient = this.ctx.createRadialGradient(
+                         particle.x, particle.y, 0,
+                         particle.x, particle.y, particle.size * 2
+                     );
+                     
+                     gradient.addColorStop(0, `hsla(${particle.hue}, 60%, 25%, ${particle.opacity})`);
+                     gradient.addColorStop(0.5, `hsla(${particle.hue}, 50%, 20%, ${particle.opacity * 0.2})`);
+                     gradient.addColorStop(1, `hsla(${particle.hue}, 40%, 15%, 0)`);
+                     
+                     this.ctx.beginPath();
+                     this.ctx.arc(particle.x, particle.y, particle.size * 2, 0, Math.PI * 2);
+                     this.ctx.fillStyle = gradient;
+                     this.ctx.fill();
+                     
+                     // Core particle
+                     this.ctx.beginPath();
+                     this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                     this.ctx.fillStyle = `hsla(${particle.hue}, 70%, 30%, ${particle.opacity})`;
+                     this.ctx.fill();
+                 });
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', () => {
+            new ParticleSystem();
+        });
+
+        document.getElementById('emailForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const preferences = Array.from(document.querySelectorAll('input[name="preferences"]:checked')).map(cb => cb.value);
+            
+            // Submit email
+            const emailData = new FormData();
+            emailData.append('email', email);
+            
+            const emailResponse = await fetch('/submit_email', {
+                method: 'POST',
+                body: emailData
+            });
+            
+            const emailResult = await emailResponse.json();
+            
+            // Submit preferences if any are selected
+            if (preferences.length > 0) {
+                const surveyData = new FormData();
+                surveyData.append('email', email);
+                surveyData.append('frequency', 'weekly'); // default frequency
+                preferences.forEach(pref => surveyData.append('preferences', pref));
+                
+                await fetch('/submit_survey', {
+                    method: 'POST',
+                    body: surveyData
+                });
+            }
+            
+            // Show response
+            const responseDiv = document.getElementById('response');
+            responseDiv.style.display = 'block';
+            responseDiv.textContent = emailResult.message;
+            responseDiv.className = 'response ' + (emailResult.success ? 'success' : 'error');
+            
+            if (emailResult.success) {
+                this.reset();
+                // Uncheck all preference tags
+                document.querySelectorAll('input[name="preferences"]').forEach(cb => cb.checked = false);
+            }
+        });
+    </script>
 </body>
-
 </html>
