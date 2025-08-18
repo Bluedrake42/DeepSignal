@@ -41,6 +41,13 @@
         </div>
     </div>
 
+    <!-- Powered by footer -->
+    <div class="powered-by">
+        <a href="https://github.com/Bluedrake42/DeepSignal" target="_blank" rel="noopener noreferrer">
+            powered by Deep Signal
+        </a>
+    </div>
+
 
 
     <style>
@@ -219,6 +226,40 @@
             background: rgba(255, 193, 7, 0.2);
             color: #ffc107;
             border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .powered-by {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        .powered-by a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 11px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding: 10px 16px;
+            border-radius: 20px;
+            background: rgba(20, 5, 5, 0.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 100, 100, 0.2);
+            display: inline-block;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .powered-by a:hover {
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(40, 15, 15, 0.9);
+            border-color: rgba(255, 100, 100, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
         }
 
                  .tags {
