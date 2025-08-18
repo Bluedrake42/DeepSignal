@@ -7,8 +7,11 @@
 </head>
 <body>
     <div class="particles" id="particles"></div>
-    <div class="container">
-        <div class="center-box">
+    
+    <!-- Newsletter Signup Section -->
+    <div class="signup-section">
+        <div class="container">
+            <div class="center-box">
             <div class="header">
                 <div class="profile-pic">
                     <div class="avatar">MP</div>
@@ -42,11 +45,249 @@
              </div>
 
              <form id="emailForm">
-                 <input type="email" id="email" name="email" required placeholder="placeholder@email.com">
+                 <input type="email" id="email" name="email" required placeholder="Enter your email address">
                  <button type="submit">Subscribe</button>
              </form>
              
              <div id="response" class="response"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog/Newsletter Archive Section -->
+    <div class="blog-section">
+        <div class="blog-container">
+            <div class="blog-header">
+                <h2>Latest Newsletter Entries</h2>
+                <p>Explore our previous content and see what you'll receive</p>
+            </div>
+            
+            <div class="blog-grid">
+                <!-- Newsletter Entry 1 -->
+                <article class="blog-card" data-page="1">
+                    <div class="blog-meta">
+                        <span class="blog-date">March 15, 2024</span>
+                        <span class="blog-category">Tech Insights</span>
+                    </div>
+                    <h3>The Future of AI-Driven Development</h3>
+                    <p>Exploring how artificial intelligence is reshaping the way we build software, from automated testing to intelligent code generation...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">AI</span>
+                        <span class="blog-tag">Development</span>
+                        <span class="blog-tag">Future Tech</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 2 -->
+                <article class="blog-card" data-page="1">
+                    <div class="blog-meta">
+                        <span class="blog-date">March 8, 2024</span>
+                        <span class="blog-category">Industry News</span>
+                    </div>
+                    <h3>Weekly Tech Roundup: Major Updates</h3>
+                    <p>This week brought significant announcements from major tech companies, including new framework releases, security updates, and industry partnerships...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">News</span>
+                        <span class="blog-tag">Updates</span>
+                        <span class="blog-tag">Industry</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 3 - Supporter Only -->
+                <article class="blog-card supporter-only" data-page="1">
+                    <div class="supporter-badge">
+                        <span>🔒 Supporter Only</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">March 1, 2024</span>
+                            <span class="blog-category">Tutorial</span>
+                        </div>
+                        <h3>Building Scalable Web Applications</h3>
+                        <p>A comprehensive guide to designing and implementing web applications that can handle growth, featuring best practices for architecture and performance...</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Tutorial</span>
+                            <span class="blog-tag">Web Dev</span>
+                            <span class="blog-tag">Scalability</span>
+                        </div>
+                    </div>
+                    <div class="supporter-overlay">
+                        <div class="unlock-content">
+                            <div class="lock-icon">🔐</div>
+                            <h4>Supporter Exclusive</h4>
+                            <p>Unlock premium content and support our newsletter</p>
+                            <button class="unlock-btn">Become a Supporter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Newsletter Entry 4 -->
+                <article class="blog-card" data-page="1">
+                    <div class="blog-meta">
+                        <span class="blog-date">February 22, 2024</span>
+                        <span class="blog-category">Deep Dive</span>
+                    </div>
+                    <h3>Understanding Modern JavaScript Frameworks</h3>
+                    <p>An in-depth comparison of React, Vue, and Angular, examining their strengths, use cases, and what makes each framework unique in today's ecosystem...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">JavaScript</span>
+                        <span class="blog-tag">Frameworks</span>
+                        <span class="blog-tag">Comparison</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 5 -->
+                <article class="blog-card" data-page="2">
+                    <div class="blog-meta">
+                        <span class="blog-date">February 15, 2024</span>
+                        <span class="blog-category">Security</span>
+                    </div>
+                    <h3>Cybersecurity Best Practices for Developers</h3>
+                    <p>Essential security considerations every developer should know, from secure coding practices to protecting user data and preventing common vulnerabilities...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Security</span>
+                        <span class="blog-tag">Best Practices</span>
+                        <span class="blog-tag">Development</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 6 -->
+                <article class="blog-card" data-page="2">
+                    <div class="blog-meta">
+                        <span class="blog-date">February 8, 2024</span>
+                        <span class="blog-category">Career</span>
+                    </div>
+                    <h3>Navigating the Tech Job Market in 2024</h3>
+                    <p>Insights into current hiring trends, in-demand skills, and strategies for landing your next role in the ever-evolving technology sector...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Career</span>
+                        <span class="blog-tag">Jobs</span>
+                        <span class="blog-tag">Skills</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 7 - Supporter Only -->
+                <article class="blog-card supporter-only" data-page="2">
+                    <div class="supporter-badge">
+                        <span>🔒 Supporter Only</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">February 1, 2024</span>
+                            <span class="blog-category">Tools</span>
+                        </div>
+                        <h3>Essential Developer Tools for 2024</h3>
+                        <p>A curated list of productivity tools, code editors, and frameworks that can streamline your development workflow and boost your efficiency...</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Tools</span>
+                            <span class="blog-tag">Productivity</span>
+                            <span class="blog-tag">Workflow</span>
+                        </div>
+                    </div>
+                    <div class="supporter-overlay">
+                        <div class="unlock-content">
+                            <div class="lock-icon">🔐</div>
+                            <h4>Supporter Exclusive</h4>
+                            <p>Access premium tools guide and exclusive recommendations</p>
+                            <button class="unlock-btn">Become a Supporter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Newsletter Entry 8 -->
+                <article class="blog-card" data-page="2">
+                    <div class="blog-meta">
+                        <span class="blog-date">January 25, 2024</span>
+                        <span class="blog-category">Cloud</span>
+                    </div>
+                    <h3>Cloud Architecture Patterns</h3>
+                    <p>Exploring modern cloud design patterns including microservices, serverless computing, and container orchestration strategies for scalable applications...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Cloud</span>
+                        <span class="blog-tag">Architecture</span>
+                        <span class="blog-tag">Serverless</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 9 -->
+                <article class="blog-card" data-page="2">
+                    <div class="blog-meta">
+                        <span class="blog-date">January 18, 2024</span>
+                        <span class="blog-category">Machine Learning</span>
+                    </div>
+                    <h3>Getting Started with Machine Learning</h3>
+                    <p>A beginner-friendly introduction to machine learning concepts, popular libraries, and practical applications you can implement today...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">ML</span>
+                        <span class="blog-tag">Beginner</span>
+                        <span class="blog-tag">Python</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 10 -->
+                <article class="blog-card" data-page="3">
+                    <div class="blog-meta">
+                        <span class="blog-date">January 11, 2024</span>
+                        <span class="blog-category">Database</span>
+                    </div>
+                    <h3>Database Design Best Practices</h3>
+                    <p>Fundamental principles of database design, normalization techniques, and performance optimization strategies for modern applications...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Database</span>
+                        <span class="blog-tag">Design</span>
+                        <span class="blog-tag">Performance</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 11 -->
+                <article class="blog-card" data-page="3">
+                    <div class="blog-meta">
+                        <span class="blog-date">January 4, 2024</span>
+                        <span class="blog-category">Mobile</span>
+                    </div>
+                    <h3>Cross-Platform Mobile Development</h3>
+                    <p>Comparing React Native, Flutter, and other cross-platform solutions for building mobile apps that work across iOS and Android...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Mobile</span>
+                        <span class="blog-tag">React Native</span>
+                        <span class="blog-tag">Flutter</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 12 -->
+                <article class="blog-card" data-page="3">
+                    <div class="blog-meta">
+                        <span class="blog-date">December 28, 2023</span>
+                        <span class="blog-category">Year Review</span>
+                    </div>
+                    <h3>Tech Trends That Shaped 2023</h3>
+                    <p>Looking back at the major technological developments, breakthrough innovations, and industry shifts that defined the past year...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Review</span>
+                        <span class="blog-tag">Trends</span>
+                        <span class="blog-tag">2023</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" id="prevBtn" onclick="changePage(-1)">← Previous</button>
+                <div class="page-info">
+                    <span class="page-current">1</span> of <span class="page-total">3</span>
+                </div>
+                <button class="page-btn" id="nextBtn" onclick="changePage(1)">Next →</button>
+            </div>
         </div>
     </div>
 
@@ -62,11 +303,8 @@
             background: radial-gradient(circle at center, #1a0000 0%, #0d0000 50%, #000000 100%);
             color: #fff;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         /* Particle background */
@@ -97,6 +335,15 @@
             height: 1px;
             background: linear-gradient(90deg, rgba(0, 123, 255, 0.2), transparent);
             pointer-events: none;
+        }
+
+        .signup-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
         }
 
         .container {
@@ -331,6 +578,305 @@
              transform: translateY(-2px);
          }
 
+        /* Blog Section Styles */
+        .blog-section {
+            padding: 80px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .blog-header h2 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .blog-header p {
+            font-size: 18px;
+            color: #aaa;
+            margin: 0;
+        }
+
+        .blog-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: rgba(20, 5, 5, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 100, 100, 0.15);
+            box-shadow: 0 8px 40px rgba(255, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(204, 41, 54, 0.6), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 50px rgba(255, 0, 0, 0.15);
+            border-color: rgba(255, 100, 100, 0.3);
+        }
+
+        .blog-card:hover::before {
+            opacity: 1;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 12px;
+        }
+
+        .blog-date {
+            color: #999;
+            font-weight: 500;
+        }
+
+        .blog-category {
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-card h3 {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .blog-card p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .blog-tag {
+            background: rgba(40, 10, 10, 0.8);
+            color: #ddaaaa;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            border: 1px solid rgba(255, 100, 100, 0.2);
+            font-weight: 500;
+        }
+
+        .read-more {
+            color: #cc2936;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .read-more:hover {
+            color: #ff4444;
+            transform: translateX(4px);
+        }
+
+        /* Hide blog cards that aren't on current page */
+        .blog-card {
+            display: none !important;
+        }
+
+        .blog-card[data-page="1"] {
+            display: block !important;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .page-btn {
+            background: rgba(20, 5, 5, 0.95);
+            color: #fff;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(15px);
+        }
+
+        .page-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            border-color: #cc2936;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(204, 41, 54, 0.4);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .page-info {
+            color: #aaa;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .page-current {
+            color: #cc2936;
+            font-weight: 600;
+        }
+
+        /* Supporter Only Styles */
+        .supporter-only {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .supporter-only .blog-content {
+            filter: blur(3px);
+            pointer-events: none;
+            transition: filter 0.3s ease;
+        }
+
+        .supporter-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 5;
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.4);
+            border: 1px solid rgba(255, 100, 100, 0.3);
+        }
+
+        .supporter-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(20, 5, 5, 0.95), rgba(26, 0, 0, 0.95));
+            backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 4;
+            border-radius: 16px;
+        }
+
+        .unlock-content {
+            text-align: center;
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        .lock-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            opacity: 0.9;
+            color: #cc2936;
+        }
+
+        .unlock-content h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .unlock-content p {
+            color: #ddaaaa;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        .unlock-btn {
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            color: white;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
+
+        .unlock-btn:hover {
+            background: linear-gradient(135deg, #dd3a47, #bb252f);
+            border-color: #cc2936;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(204, 41, 54, 0.5);
+        }
+
+        .supporter-only:hover .blog-content {
+            filter: blur(2px);
+        }
+
         @media (max-width: 600px) {
             .center-box {
                 padding: 24px;
@@ -349,6 +895,78 @@
                 padding: 10px 12px;
                 font-size: 12px;
                 min-height: 40px;
+            }
+
+            .blog-section {
+                padding: 60px 20px;
+            }
+
+            .blog-header h2 {
+                font-size: 28px;
+            }
+
+            .blog-header p {
+                font-size: 16px;
+            }
+
+            .blog-grid {
+                gap: 20px;
+            }
+
+            .pagination {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .page-btn {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .supporter-badge {
+                top: 15px;
+                right: 15px;
+                padding: 4px 8px;
+                font-size: 10px;
+            }
+
+            .unlock-content {
+                padding: 16px;
+                max-width: 100%;
+            }
+
+            .lock-icon {
+                font-size: 28px;
+                margin-bottom: 8px;
+            }
+
+            .unlock-content h4 {
+                font-size: 16px;
+                margin-bottom: 6px;
+            }
+
+            .unlock-content p {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .unlock-btn {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .blog-card {
+                padding: 24px;
+            }
+
+            .blog-card h3 {
+                font-size: 20px;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
             }
         }
     </style>
@@ -440,8 +1058,8 @@
             animate() {
                 this.time += 0.016;
                 
-                // Create slight motion blur effect
-                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                // Create fading trail effect
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
                 this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
                 
                                 // Update particles
@@ -606,6 +1224,44 @@
                 document.querySelectorAll('input[name="preferences"]').forEach(cb => cb.checked = false);
             }
         });
+
+        // Pagination functionality
+        let currentPage = 1;
+        const totalPages = 3;
+
+        function changePage(direction) {
+            const newPage = currentPage + direction;
+            
+            if (newPage < 1 || newPage > totalPages) {
+                return;
+            }
+            
+            currentPage = newPage;
+            updatePagination();
+        }
+
+        function updatePagination() {
+            // Hide all blog cards
+            document.querySelectorAll('.blog-card').forEach(card => {
+                card.style.setProperty('display', 'none', 'important');
+            });
+            
+            // Show only cards for current page
+            document.querySelectorAll(`.blog-card[data-page="${currentPage}"]`).forEach(card => {
+                card.style.setProperty('display', 'block', 'important');
+            });
+            
+            // Update pagination controls
+            document.querySelector('.page-current').textContent = currentPage;
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+        }
+
+        // Initialize pagination
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePagination();
+        });
+
     </script>
 </body>
 </html>
