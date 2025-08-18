@@ -45,10 +45,27 @@ def load_site_config():
                                   fallback=default_config['content_categories']['categories'])
         categories = [cat.strip() for cat in categories_raw.split('\n') if cat.strip()]
         
+        # Get email message settings
+        validation_subject = config.get('email_messages', 'validation_subject', 
+                                      fallback='Please validate your email')
+        validation_message = config.get('email_messages', 'validation_message', 
+                                       fallback='Thank you for joining our community. Please click the link below to confirm your email:')
+        welcome_subject = config.get('email_messages', 'welcome_subject', 
+                                   fallback='Welcome - You\'re connected!')
+        welcome_message = config.get('email_messages', 'welcome_message', 
+                                    fallback='Thank you for confirming your email. You\'re now part of our community.')
+        sender_name = config.get('email_messages', 'sender_name', 
+                               fallback='The Team')
+        
         return {
             'title': site_title,
             'subtitle': site_subtitle,
-            'categories': categories
+            'categories': categories,
+            'validation_subject': validation_subject,
+            'validation_message': validation_message,
+            'welcome_subject': welcome_subject,
+            'welcome_message': welcome_message,
+            'sender_name': sender_name
         }
         
     except Exception as e:
@@ -58,7 +75,12 @@ def load_site_config():
         return {
             'title': default_config['site']['title'],
             'subtitle': default_config['site']['subtitle'],
-            'categories': categories
+            'categories': categories,
+            'validation_subject': 'Please validate your email',
+            'validation_message': 'Thank you for joining our community. Please click the link below to confirm your email:',
+            'welcome_subject': 'Welcome - You\'re connected!',
+            'welcome_message': 'Thank you for confirming your email. You\'re now part of our community.',
+            'sender_name': 'The Team'
         }
 
 # Load site configuration
@@ -132,13 +154,9 @@ def send_validation_email(email, validation_token):
     try:
         validation_url = url_for('validate_email', token=validation_token, _external=True)
         
-        subject = "Welcome to Deep Signal - Please validate your email"
+        subject = site_config['validation_subject']
         body = f"""
-Welcome to Deep Signal!
-
-Thank you for joining our community of creators and audience members who value direct, uninterrupted connections.
-
-Please click the link below to confirm your email and complete your signup:
+{site_config['validation_message']}
 {validation_url}
 
 This link will expire in 1 hour for security purposes.
@@ -146,7 +164,7 @@ This link will expire in 1 hour for security purposes.
 If you didn't request this, please ignore this email.
 
 Best regards,
-The Deep Signal Team
+{site_config['sender_name']}
 """
         
         msg = Message(
@@ -167,25 +185,17 @@ The Deep Signal Team
 def send_welcome_email(email, preferences):
     """Send welcome email after validation"""
     try:
-        subject = "Welcome to Deep Signal - You're connected!"
+        subject = site_config['welcome_subject']
         
         preferences_text = ""
         if preferences:
             preferences_text = f"\n\nYour selected content interests:\n" + "\n".join([f"• {pref}" for pref in preferences])
         
         body = f"""
-Welcome to Deep Signal!
+{site_config['welcome_message']}{preferences_text}
 
-Thank you for confirming your email. You're now part of our community that values direct creator-audience connections free from platform interference.
-
-You'll receive content updates based on your selected interests.{preferences_text}
-
-Content creators can now reach you directly with relevant updates, ensuring you never miss important content due to algorithm changes or platform policies.
-
-You can update your preferences or leave the community at any time by replying to this email.
-
-Welcome to independent content consumption!
-The Deep Signal Team
+Best regards,
+{site_config['sender_name']}
 """
         
         msg = Message(
@@ -267,7 +277,7 @@ def submit_email():
         
         # Send validation email
         if send_validation_email(email, validation_token):
-                            return jsonify({'success': True, 'message': 'Please check your email and click the validation link to join the Deep Signal community'}), 200
+                            return jsonify({'success': True, 'message': 'Please check your email and click the validation link to complete your subscription'}), 200
         else:
             # Remove the subscriber if email sending failed
             subscribers.delete_one({'_id': result.inserted_id})
@@ -335,7 +345,7 @@ def validate_email(token):
         if subscriber.get('email_validated', False):
             return render_template('validation_result.html', 
                                  success=True, 
-                                 message="Your email is already validated. Welcome to our newsletter!")
+                                 message="Your email is already validated. Welcome!")
         
         # Update subscriber as validated
         subscribers.update_one(
@@ -359,7 +369,7 @@ def validate_email(token):
         
         return render_template('validation_result.html', 
                              success=True, 
-                             message="Welcome to Deep Signal! Your email has been validated and you're now connected to our creator community.")
+                             message="Welcome! Your email has been validated and you're now subscribed.")
         
     except Exception as e:
         logger.error(f"Error in validate_email: {e}")
