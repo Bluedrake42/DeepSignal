@@ -25,20 +25,23 @@ def load_site_config():
     # Default configuration
     default_config = {
         'site': {
-            'title': 'Deep Signal',
-            'subtitle': 'Direct Creator Connections'
+            'title': 'Default Site Title',
+            'subtitle': 'Default Subtitle - Configure in settings.cfg'
         },
         'content_categories': {
-            'categories': 'Game Development\nArtificial Intelligence\nTactical Video Games\nPersonal Updates'
+            'categories': 'Default Category 1\nDefault Category 2\nDefault Category 3'
         }
     }
     
     try:
+        print(f"DEBUG: Loading config from: {config_path}")
         config.read(config_path)
+        print(f"DEBUG: Config sections found: {config.sections()}")
         
         # Get site settings
         site_title = config.get('site', 'title', fallback=default_config['site']['title'])
         site_subtitle = config.get('site', 'subtitle', fallback=default_config['site']['subtitle'])
+        print(f"DEBUG: Loaded title: '{site_title}', subtitle: '{site_subtitle}'")
         
         # Get categories - split by newlines and clean up
         categories_raw = config.get('content_categories', 'categories', 
@@ -76,11 +79,11 @@ def load_site_config():
             'title': default_config['site']['title'],
             'subtitle': default_config['site']['subtitle'],
             'categories': categories,
-            'validation_subject': 'Please validate your email',
-            'validation_message': 'Thank you for joining our community. Please click the link below to confirm your email:',
-            'welcome_subject': 'Welcome - You\'re connected!',
-            'welcome_message': 'Thank you for confirming your email. You\'re now part of our community.',
-            'sender_name': 'The Team'
+            'validation_subject': 'Default Validation Subject',
+            'validation_message': 'Default validation message - configure in settings.cfg',
+            'welcome_subject': 'Default Welcome Subject',
+            'welcome_message': 'Default welcome message - configure in settings.cfg',
+            'sender_name': 'Default Team'
         }
 
 # Load site configuration
