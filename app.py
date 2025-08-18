@@ -34,14 +34,11 @@ def load_site_config():
     }
     
     try:
-        print(f"DEBUG: Loading config from: {config_path}")
         config.read(config_path)
-        print(f"DEBUG: Config sections found: {config.sections()}")
         
         # Get site settings
         site_title = config.get('site', 'title', fallback=default_config['site']['title'])
         site_subtitle = config.get('site', 'subtitle', fallback=default_config['site']['subtitle'])
-        print(f"DEBUG: Loaded title: '{site_title}', subtitle: '{site_subtitle}'")
         
         # Get categories - split by newlines and clean up
         categories_raw = config.get('content_categories', 'categories', 
@@ -219,7 +216,15 @@ Best regards,
 @app.route('/')
 def index():
     """Serve the main Deep Signal audience signup page"""
-    return render_template('index.html', config=site_config)
+    try:
+        # Get subscriber count from MongoDB
+        db = get_db()
+        subscriber_count = db.subscribers.count_documents({'email_validated': True})
+    except Exception as e:
+        logger.error(f"Error getting subscriber count: {e}")
+        subscriber_count = 0
+    
+    return render_template('index.html', config=site_config, subscriber_count=subscriber_count)
 
 @app.route('/submit_email', methods=['POST'])
 def submit_email():
