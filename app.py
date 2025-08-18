@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 import os
 import re
 import logging
+import configparser
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -14,6 +15,54 @@ load_dotenv()
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Load site configuration
+def load_site_config():
+    """Load site configuration from settings.cfg"""
+    config = configparser.ConfigParser()
+    config_path = os.path.join(os.path.dirname(__file__), 'settings.cfg')
+    
+    # Default configuration
+    default_config = {
+        'site': {
+            'title': 'Deep Signal',
+            'subtitle': 'Direct Creator Connections'
+        },
+        'content_categories': {
+            'categories': 'Game Development\nArtificial Intelligence\nTactical Video Games\nPersonal Updates'
+        }
+    }
+    
+    try:
+        config.read(config_path)
+        
+        # Get site settings
+        site_title = config.get('site', 'title', fallback=default_config['site']['title'])
+        site_subtitle = config.get('site', 'subtitle', fallback=default_config['site']['subtitle'])
+        
+        # Get categories - split by newlines and clean up
+        categories_raw = config.get('content_categories', 'categories', 
+                                  fallback=default_config['content_categories']['categories'])
+        categories = [cat.strip() for cat in categories_raw.split('\n') if cat.strip()]
+        
+        return {
+            'title': site_title,
+            'subtitle': site_subtitle,
+            'categories': categories
+        }
+        
+    except Exception as e:
+        logger.warning(f"Error loading settings.cfg: {e}. Using default configuration.")
+        # Return default configuration if file can't be read
+        categories = [cat.strip() for cat in default_config['content_categories']['categories'].split('\n') if cat.strip()]
+        return {
+            'title': default_config['site']['title'],
+            'subtitle': default_config['site']['subtitle'],
+            'categories': categories
+        }
+
+# Load site configuration
+site_config = load_site_config()
 
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'dev-secret-key-change-in-production')
@@ -37,7 +86,7 @@ serializer = URLSafeTimedSerializer(app.secret_key)
 
 # MongoDB Configuration
 MONGO_URI = os.getenv('MONGO_URI', 'mongodb://localhost:27017/')
-DATABASE_NAME = os.getenv('DATABASE_NAME', 'newsletter')
+DATABASE_NAME = os.getenv('DATABASE_NAME', 'deepsignal')
 
 # MongoDB client with lazy initialization
 _mongo_client = None
@@ -83,19 +132,21 @@ def send_validation_email(email, validation_token):
     try:
         validation_url = url_for('validate_email', token=validation_token, _external=True)
         
-        subject = "Please validate your email subscription"
+        subject = "Welcome to Deep Signal - Please validate your email"
         body = f"""
-Welcome to our newsletter!
+Welcome to Deep Signal!
 
-Please click the link below to confirm your email subscription:
+Thank you for joining our community of creators and audience members who value direct, uninterrupted connections.
+
+Please click the link below to confirm your email and complete your signup:
 {validation_url}
 
 This link will expire in 1 hour for security purposes.
 
-If you didn't request this subscription, please ignore this email.
+If you didn't request this, please ignore this email.
 
 Best regards,
-The Newsletter Team
+The Deep Signal Team
 """
         
         msg = Message(
@@ -116,21 +167,25 @@ The Newsletter Team
 def send_welcome_email(email, preferences):
     """Send welcome email after validation"""
     try:
-        subject = "Welcome to our newsletter!"
+        subject = "Welcome to Deep Signal - You're connected!"
         
         preferences_text = ""
         if preferences:
-            preferences_text = f"\n\nYour content preferences:\n" + "\n".join([f"• {pref}" for pref in preferences])
+            preferences_text = f"\n\nYour selected content interests:\n" + "\n".join([f"• {pref}" for pref in preferences])
         
         body = f"""
-Thank you for confirming your email subscription!
+Welcome to Deep Signal!
 
-You're now subscribed to our newsletter and will receive updates based on your preferences.{preferences_text}
+Thank you for confirming your email. You're now part of our community that values direct creator-audience connections free from platform interference.
 
-You can update your preferences or unsubscribe at any time by replying to this email.
+You'll receive content updates based on your selected interests.{preferences_text}
 
-Welcome aboard!
-The Newsletter Team
+Content creators can now reach you directly with relevant updates, ensuring you never miss important content due to algorithm changes or platform policies.
+
+You can update your preferences or leave the community at any time by replying to this email.
+
+Welcome to independent content consumption!
+The Deep Signal Team
 """
         
         msg = Message(
@@ -150,12 +205,12 @@ The Newsletter Team
 
 @app.route('/')
 def index():
-    """Serve the main newsletter signup page"""
-    return render_template('index.html')
+    """Serve the main Deep Signal audience signup page"""
+    return render_template('index.html', config=site_config)
 
 @app.route('/submit_email', methods=['POST'])
 def submit_email():
-    """Handle email submission for newsletter signup"""
+    """Handle email submission for Deep Signal audience signup"""
     try:
         email = request.form.get('email', '').strip().lower()
         
@@ -212,7 +267,7 @@ def submit_email():
         
         # Send validation email
         if send_validation_email(email, validation_token):
-            return jsonify({'success': True, 'message': 'Please check your email and click the validation link to complete your subscription'}), 200
+                            return jsonify({'success': True, 'message': 'Please check your email and click the validation link to join the Deep Signal community'}), 200
         else:
             # Remove the subscriber if email sending failed
             subscribers.delete_one({'_id': result.inserted_id})
@@ -304,7 +359,7 @@ def validate_email(token):
         
         return render_template('validation_result.html', 
                              success=True, 
-                             message="Thank you! Your email has been validated and you're now subscribed to our newsletter.")
+                             message="Welcome to Deep Signal! Your email has been validated and you're now connected to our creator community.")
         
     except Exception as e:
         logger.error(f"Error in validate_email: {e}")

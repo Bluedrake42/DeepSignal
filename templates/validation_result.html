@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation - Deep Signal</title>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <!-- Validation Result Section -->
+    <div class="signup-section">
+        <div class="container">
+            <div class="center-box">
+                <div class="header">
+                    <div class="profile-pic">
+                        <div class="avatar">{{ '✓' if success else '✗' }}</div>
+                    </div>
+                    <div class="header-text">
+                        <h1>Email Validation</h1>
+                        <p>{{ 'Success' if success else 'Error' }}</p>
+                    </div>
+                </div>
+                
+                <div class="result-message {{ 'success' if success else 'error' }}">
+                    <p>{{ message }}</p>
+                </div>
+                
+                {% if success %}
+                <div class="success-actions">
+                    <a href="/" class="back-btn">Back to Deep Signal</a>
+                </div>
+                {% else %}
+                <div class="error-actions">
+                    <a href="/" class="back-btn">Try Again</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at center, #1a0000 0%, #0d0000 50%, #000000 100%);
+            color: #fff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Particle background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .signup-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .center-box {
+            background: rgba(20, 5, 5, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(255, 0, 0, 0.1), 0 0 80px rgba(255, 0, 0, 0.05);
+            border: 1px solid rgba(255, 100, 100, 0.15);
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .profile-pic {
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
+
+        .header-text {
+            text-align: left;
+        }
+
+        .header-text h1 {
+            margin-bottom: 4px;
+            font-size: 26px;
+        }
+
+        .header-text p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .result-message {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .result-message.success {
+            background: rgba(40, 167, 69, 0.2);
+            color: #4caf50;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .result-message.error {
+            background: rgba(220, 53, 69, 0.2);
+            color: #f44336;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, #dd3a47, #bb252f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(204, 41, 54, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .center-box {
+                padding: 24px;
+            }
+            
+            .header-text h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+
+    <script>
+        // Simple particle system for validation page
+        class SimpleParticleSystem {
+            constructor() {
+                this.canvas = document.createElement('canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                
+                this.setup();
+                this.createParticles();
+                this.animate();
+            }
+            
+            setup() {
+                const container = document.getElementById('particles');
+                container.appendChild(this.canvas);
+                
+                this.canvas.style.position = 'absolute';
+                this.canvas.style.top = '0';
+                this.canvas.style.left = '0';
+                this.canvas.style.pointerEvents = 'none';
+                
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                this.particles = [];
+                this.createParticles();
+            }
+            
+            createParticles() {
+                const numParticles = Math.min(50, Math.floor((window.innerWidth * window.innerHeight) / 20000));
+                
+                for (let i = 0; i < numParticles; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.3,
+                        vy: (Math.random() - 0.5) * 0.3,
+                        size: Math.random() * 1.5 + 0.5,
+                        opacity: 0.1 + Math.random() * 0.2
+                    });
+                }
+            }
+            
+            animate() {
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                for (let particle of this.particles) {
+                    // Update position
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    // Wrap around edges
+                    if (particle.x < 0) particle.x = this.canvas.width;
+                    if (particle.x > this.canvas.width) particle.x = 0;
+                    if (particle.y < 0) particle.y = this.canvas.height;
+                    if (particle.y > this.canvas.height) particle.y = 0;
+                    
+                    // Draw particle
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `hsla(350, 60%, 40%, ${particle.opacity})`;
+                    this.ctx.fill();
+                }
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', () => {
+            new SimpleParticleSystem();
+        });
+    </script>
+</body>
+</html>

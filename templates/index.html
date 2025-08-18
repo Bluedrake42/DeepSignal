@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mockup Newsletter Site</title>
+    <title>Deep Signal - Direct Creator Connections</title>
 </head>
 <body>
     <div class="particles" id="particles"></div>
@@ -13,34 +13,21 @@
         <div class="container">
             <div class="center-box">
             <div class="header">
-                <div class="profile-pic">
-                    <div class="avatar">MP</div>
-                </div>
                 <div class="header-text">
-                    <h1>Mockup Creator Page</h1>
-                    <p>Placeholder Newsletter Design</p>
+                    <h1>{{ config.title }}</h1>
+                    <p>{{ config.subtitle }}</p>
                 </div>
             </div>
             
                          <div class="tags">
-                 <p>Placeholder content preferences:</p>
+                 <p>Select your content interests:</p>
                  <div class="tag-list">
+                     {% for category in config.categories %}
                      <label class="tag">
-                         <input type="checkbox" name="preferences" value="Mockup Category A">
-                         <span>Mockup Category A</span>
+                         <input type="checkbox" name="preferences" value="{{ category }}">
+                         <span>{{ category }}</span>
                      </label>
-                     <label class="tag">
-                         <input type="checkbox" name="preferences" value="Placeholder Topic B">
-                         <span>Placeholder Topic B</span>
-                     </label>
-                     <label class="tag">
-                         <input type="checkbox" name="preferences" value="Sample Content C">
-                         <span>Sample Content C</span>
-                     </label>
-                     <label class="tag">
-                         <input type="checkbox" name="preferences" value="Demo Category D">
-                         <span>Demo Category D</span>
-                     </label>
+                     {% endfor %}
                  </div>
              </div>
 
@@ -130,34 +117,12 @@
         }
 
         .header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
+            text-align: center;
             margin-bottom: 40px;
         }
 
-        .profile-pic {
-            flex-shrink: 0;
-        }
-
-        .avatar {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #cc2936, #aa1e2a);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            border: 2px solid rgba(255, 100, 100, 0.3);
-            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
-        }
-
         .header-text {
-            text-align: left;
+            text-align: center;
         }
 
         .header-text h1 {
@@ -248,6 +213,12 @@
             background: rgba(220, 53, 69, 0.2);
             color: #f44336;
             border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+
+        .response.loading {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.3);
         }
 
                  .tags {
@@ -587,41 +558,55 @@
             
             const email = document.getElementById('email').value;
             const preferences = Array.from(document.querySelectorAll('input[name="preferences"]:checked')).map(cb => cb.value);
-            
-            // Submit email
-            const emailData = new FormData();
-            emailData.append('email', email);
-            
-            const emailResponse = await fetch('/submit_email', {
-                method: 'POST',
-                body: emailData
-            });
-            
-            const emailResult = await emailResponse.json();
-            
-            // Submit preferences if any are selected
-            if (preferences.length > 0) {
-                const surveyData = new FormData();
-                surveyData.append('email', email);
-                surveyData.append('frequency', 'weekly'); // default frequency
-                preferences.forEach(pref => surveyData.append('preferences', pref));
-                
-                await fetch('/submit_survey', {
-                    method: 'POST',
-                    body: surveyData
-                });
-            }
-            
-            // Show response
             const responseDiv = document.getElementById('response');
-            responseDiv.style.display = 'block';
-            responseDiv.textContent = emailResult.message;
-            responseDiv.className = 'response ' + (emailResult.success ? 'success' : 'error');
             
-            if (emailResult.success) {
-                this.reset();
-                // Uncheck all preference tags
-                document.querySelectorAll('input[name="preferences"]').forEach(cb => cb.checked = false);
+            // Show loading state
+            responseDiv.style.display = 'block';
+            responseDiv.textContent = 'Processing your subscription...';
+            responseDiv.className = 'response loading';
+            
+            try {
+                // Submit email
+                const emailData = new FormData();
+                emailData.append('email', email);
+                
+                const emailResponse = await fetch('/submit_email', {
+                    method: 'POST',
+                    body: emailData
+                });
+                
+                const emailResult = await emailResponse.json();
+                
+                // Submit preferences if any are selected and email submission was successful
+                if (emailResult.success && preferences.length > 0) {
+                    const surveyData = new FormData();
+                    surveyData.append('email', email);
+                    preferences.forEach(pref => surveyData.append('preferences', pref));
+                    
+                    try {
+                        await fetch('/submit_survey', {
+                            method: 'POST',
+                            body: surveyData
+                        });
+                    } catch (surveyError) {
+                        console.warn('Failed to save preferences, but subscription succeeded');
+                    }
+                }
+                
+                // Show response
+                responseDiv.textContent = emailResult.message;
+                responseDiv.className = 'response ' + (emailResult.success ? 'success' : 'error');
+                
+                if (emailResult.success) {
+                    this.reset();
+                    // Uncheck all preference tags
+                    document.querySelectorAll('input[name="preferences"]').forEach(cb => cb.checked = false);
+                }
+                
+            } catch (error) {
+                console.error('Subscription error:', error);
+                responseDiv.textContent = 'An error occurred. Please check your connection and try again.';
+                responseDiv.className = 'response error';
             }
         });
 

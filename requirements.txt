@@ -1,9 +1,7 @@
-click==7.1.2
-Flask==1.1.2
-gunicorn==20.0.4
-itsdangerous==1.1.0
-Jinja2==2.11.3
-MarkupSafe==1.1.1
-Werkzeug==1.0.1
-eel>=0.14.0
-requests>=2.25.1
+Flask==3.0.0
+Flask-Mail==0.9.1
+pymongo==4.6.0
+python-dotenv==1.0.0
+itsdangerous==2.1.2
+Werkzeug==3.0.1
+gunicorn==21.2.0
