@@ -1,6 +1,6 @@
-name: sample-flask
+name: deepsignal
 services:
 - name: web
   github:
-    repo: digitalocean/sample-flask
+    repo: Bluedrake42/DeepSignal
     branch: main
