@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connor "Bluedrake42" Hill - Follow me directly. No algorithms. No interference.</title>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <!-- Newsletter Signup Section -->
+    <div class="signup-section">
+        <div class="container">
+            <div class="center-box">
+            <div class="header">
+                <div class="profile-pic">
+                    <div class="avatar">BD</div>
+                </div>
+            </div>
+            <div class="header-text">
+                <h1>Connor "Bluedrake42" Hill</h1>
+                <p>Follow me directly. No algorithms. No interference.</p>
+            </div>
+            
+                         <div class="tags">
+                 <p>Select your content interests:</p>
+                 <div class="tag-list">
+                     <label class="tag">
+                         <input type="checkbox" name="preferences" value="Game Development">
+                         <span>Game Development</span>
+                     </label>
+                     <label class="tag">
+                         <input type="checkbox" name="preferences" value="Artificial Intelligence">
+                         <span>Artificial Intelligence</span>
+                     </label>
+                     <label class="tag">
+                         <input type="checkbox" name="preferences" value="Tactical Video Games">
+                         <span>Tactical Video Games</span>
+                     </label>
+                     <label class="tag">
+                         <input type="checkbox" name="preferences" value="Personal Updates">
+                         <span>Personal Updates</span>
+                     </label>
+                 </div>
+             </div>
+
+             <form id="emailForm">
+                 <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                 <button type="submit">Subscribe</button>
+             </form>
+             
+                           <!-- Subscription Tiers -->
+              <div class="subscription-tiers">
+                  <div class="donation-header">
+                      <p>Optional Donation</p>
+                  </div>
+                  <div class="billing-toggle">
+                                           <label class="billing-option">
+                          <input type="radio" name="billing" value="onetime">
+                          <span>One-time</span>
+                      </label>
+                      <label class="billing-option">
+                          <input type="radio" name="billing" value="monthly" checked>
+                          <span>Monthly</span>
+                      </label>
+                     <label class="billing-option">
+                         <input type="radio" name="billing" value="annual">
+                         <span>Annual</span>
+                     </label>
+                 </div>
+                 
+                 <div class="tier-options">
+                                           <label class="tier-option selected" data-tier="free">
+                          <input type="radio" name="tier" value="free" checked>
+                          <div class="tier-card">
+                              <span class="tier-price">Free</span>
+                          </div>
+                      </label>
+                      
+                      <label class="tier-option" data-tier="supporter">
+                          <input type="radio" name="tier" value="supporter">
+                          <div class="tier-card">
+                              <span class="tier-price">$5</span>
+                          </div>
+                      </label>
+                      
+                      <label class="tier-option" data-tier="premium">
+                          <input type="radio" name="tier" value="premium">
+                          <div class="tier-card">
+                              <span class="tier-price">$25</span>
+                          </div>
+                      </label>
+                      
+                      <label class="tier-option" data-tier="pro">
+                          <input type="radio" name="tier" value="pro">
+                          <div class="tier-card">
+                              <span class="tier-price">$75</span>
+                          </div>
+                      </label>
+                 </div>
+             </div>
+             
+             <div id="response" class="response"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog/Newsletter Archive Section -->
+    <div class="blog-section">
+        <div class="blog-container">
+            <div class="blog-header">
+                <h2>Latest Content</h2>
+                <p>Explore my previous content and see what you'll receive</p>
+            </div>
+            
+            <div class="blog-grid">
+                <!-- Newsletter Entry 1 -->
+                <article class="blog-card" data-page="1">
+                    <div class="blog-meta">
+                        <span class="blog-date">March 15, 2024</span>
+                        <span class="blog-category">Game Development</span>
+                    </div>
+                    <h3>Building Immersive Tactical Combat Systems</h3>
+                    <p>Diving deep into the mechanics that make tactical games engaging, from unit positioning algorithms to AI decision trees that create challenging opponents...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Game Dev</span>
+                        <span class="blog-tag">Tactical</span>
+                        <span class="blog-tag">AI Systems</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 2 -->
+                <article class="blog-card" data-page="1">
+                    <div class="blog-meta">
+                        <span class="blog-date">March 8, 2024</span>
+                        <span class="blog-category">Artificial Intelligence</span>
+                    </div>
+                    <h3>AI in Game Development: Beyond NPCs</h3>
+                    <p>Exploring how modern AI techniques are revolutionizing game development - from procedural content generation to dynamic difficulty adjustment and player behavior analysis...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">AI</span>
+                        <span class="blog-tag">Game Development</span>
+                        <span class="blog-tag">Machine Learning</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 3 - Supporter Only -->
+                <article class="blog-card supporter-only" data-page="1">
+                    <div class="supporter-badge">
+                        <span>🔒 Supporter Only</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">March 1, 2024</span>
+                            <span class="blog-category">Tutorial</span>
+                        </div>
+                        <h3>Advanced Game Engine Architecture</h3>
+                        <p>Deep dive into building robust game engines that can scale, featuring entity-component systems, multi-threading, and memory management strategies...</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Engine Dev</span>
+                            <span class="blog-tag">Architecture</span>
+                            <span class="blog-tag">Performance</span>
+                        </div>
+                    </div>
+                    <div class="supporter-overlay">
+                        <div class="unlock-content">
+                            <div class="lock-icon">🔐</div>
+                            <h4>Supporter Exclusive</h4>
+                            <p>Unlock premium content and support our newsletter</p>
+                            <button class="unlock-btn">Become a Supporter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Newsletter Entry 4 -->
+                <article class="blog-card" data-page="1">
+                    <div class="blog-meta">
+                        <span class="blog-date">February 22, 2024</span>
+                        <span class="blog-category">Personal Updates</span>
+                    </div>
+                    <h3>Behind the Scenes: My Development Journey</h3>
+                    <p>Sharing my experiences building complex game systems, the challenges faced, lessons learned, and how my approach to game development has evolved...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Personal</span>
+                        <span class="blog-tag">Journey</span>
+                        <span class="blog-tag">Lessons</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 5 -->
+                <article class="blog-card" data-page="2">
+                    <div class="blog-meta">
+                        <span class="blog-date">February 15, 2024</span>
+                        <span class="blog-category">Tactical Video Games</span>
+                    </div>
+                    <h3>Mastering Turn-Based Strategy Design</h3>
+                    <p>Breaking down what makes tactical games truly strategic - from action point systems to terrain interaction, and how to balance complexity with accessibility...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Strategy</span>
+                        <span class="blog-tag">Game Design</span>
+                        <span class="blog-tag">Balance</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 6 -->
+                <article class="blog-card" data-page="2">
+                    <div class="blog-meta">
+                        <span class="blog-date">February 8, 2024</span>
+                        <span class="blog-category">Game Development</span>
+                    </div>
+                    <h3>Optimizing Performance in Unity Projects</h3>
+                    <p>Practical techniques for maintaining high frame rates in complex games - from object pooling to LOD systems and efficient asset management...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Unity</span>
+                        <span class="blog-tag">Performance</span>
+                        <span class="blog-tag">Optimization</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 7 - Supporter Only -->
+                <article class="blog-card supporter-only" data-page="2">
+                    <div class="supporter-badge">
+                        <span>🔒 Supporter Only</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">February 1, 2024</span>
+                            <span class="blog-category">Tools</span>
+                        </div>
+                        <h3>My Game Development Toolkit</h3>
+                        <p>A curated list of tools, assets, and workflows I use for game development - from version control to debugging tools and art pipelines...</p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Tools</span>
+                            <span class="blog-tag">Workflow</span>
+                            <span class="blog-tag">Gamedev</span>
+                        </div>
+                    </div>
+                    <div class="supporter-overlay">
+                        <div class="unlock-content">
+                            <div class="lock-icon">🔐</div>
+                            <h4>Supporter Exclusive</h4>
+                            <p>Access premium tools guide and exclusive recommendations</p>
+                            <button class="unlock-btn">Become a Supporter</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Newsletter Entry 8 -->
+                <article class="blog-card" data-page="2">
+                    <div class="blog-meta">
+                        <span class="blog-date">January 25, 2024</span>
+                        <span class="blog-category">Artificial Intelligence</span>
+                    </div>
+                    <h3>Neural Networks for Game AI</h3>
+                    <p>Implementing machine learning in games - from basic decision trees to advanced neural networks for dynamic NPC behavior and adaptive gameplay...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Neural Networks</span>
+                        <span class="blog-tag">Game AI</span>
+                        <span class="blog-tag">Machine Learning</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 9 -->
+                <article class="blog-card" data-page="2">
+                    <div class="blog-meta">
+                        <span class="blog-date">January 18, 2024</span>
+                        <span class="blog-category">Personal Updates</span>
+                    </div>
+                    <h3>2024 Project Goals and Roadmap</h3>
+                    <p>Sharing my development goals for the year, upcoming projects I'm excited about, and the technologies I'm planning to explore...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Goals</span>
+                        <span class="blog-tag">Roadmap</span>
+                        <span class="blog-tag">Projects</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 10 -->
+                <article class="blog-card" data-page="3">
+                    <div class="blog-meta">
+                        <span class="blog-date">January 11, 2024</span>
+                        <span class="blog-category">Tactical Video Games</span>
+                    </div>
+                    <h3>Analyzing XCOM's Combat Design</h3>
+                    <p>Breaking down what makes XCOM's tactical combat so engaging - from percentage-based hit chances to overwatch mechanics and psychological tension...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">XCOM</span>
+                        <span class="blog-tag">Design Analysis</span>
+                        <span class="blog-tag">Combat</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 11 -->
+                <article class="blog-card" data-page="3">
+                    <div class="blog-meta">
+                        <span class="blog-date">January 4, 2024</span>
+                        <span class="blog-category">Game Development</span>
+                    </div>
+                    <h3>Procedural Generation in Game Design</h3>
+                    <p>Exploring techniques for creating dynamic, replayable content - from dungeon generation to procedural narratives and balanced randomization...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Procedural</span>
+                        <span class="blog-tag">Algorithms</span>
+                        <span class="blog-tag">Replayability</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+
+                <!-- Newsletter Entry 12 -->
+                <article class="blog-card" data-page="3">
+                    <div class="blog-meta">
+                        <span class="blog-date">December 28, 2023</span>
+                        <span class="blog-category">Personal Updates</span>
+                    </div>
+                    <h3>2023 Game Development Retrospective</h3>
+                    <p>Reflecting on my game development journey this year - the projects completed, challenges overcome, and lessons learned along the way...</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Retrospective</span>
+                        <span class="blog-tag">Year Review</span>
+                        <span class="blog-tag">Lessons</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Entry →</a>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" id="prevBtn" onclick="changePage(-1)">← Previous</button>
+                <div class="page-info">
+                    <span class="page-current">1</span> of <span class="page-total">3</span>
+                </div>
+                <button class="page-btn" id="nextBtn" onclick="changePage(1)">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at center, #1a0000 0%, #0d0000 50%, #000000 100%);
+            color: #fff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Particle background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .particle.connected {
+            background: rgba(0, 123, 255, 0.6);
+        }
+
+        .connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(0, 123, 255, 0.2), transparent);
+            pointer-events: none;
+        }
+
+        .signup-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .center-box {
+            background: rgba(20, 5, 5, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(255, 0, 0, 0.1), 0 0 80px rgba(255, 0, 0, 0.05);
+            border: 1px solid rgba(255, 100, 100, 0.15);
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .profile-pic {
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
+
+        .header-text {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .header-text h1 {
+            margin-bottom: 4px;
+            font-size: 26px;
+            line-height: 1.2;
+            word-wrap: break-word;
+        }
+
+        .header-text p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        p {
+            color: #aaa;
+            margin-bottom: 36px;
+            font-size: 16px;
+        }
+
+        form {
+            margin-bottom: 32px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 16px 18px;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: rgba(40, 10, 10, 0.8);
+            color: #fff;
+        }
+
+        input[type="email"]::placeholder {
+            color: #cc8888;
+        }
+
+        input[type="email"]:focus {
+            border-color: #ff4444;
+            box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #dd3a47, #bb252f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(204, 41, 54, 0.4);
+        }
+
+        .response {
+            margin-bottom: 24px;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .response.success {
+            background: rgba(40, 167, 69, 0.2);
+            color: #4caf50;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .response.error {
+            background: rgba(220, 53, 69, 0.2);
+            color: #f44336;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+
+                 .tags {
+             margin-bottom: 40px;
+         }
+
+         .tags p {
+             font-size: 13px;
+             color: #ccaaaa;
+             margin-bottom: 24px;
+             text-transform: uppercase;
+             letter-spacing: 0.5px;
+             font-weight: 500;
+         }
+
+         .tag-list {
+             display: grid;
+             grid-template-columns: repeat(2, 1fr);
+             gap: 16px;
+             max-width: 100%;
+         }
+
+         .tag {
+             display: flex;
+             align-items: center;
+             justify-content: flex-start;
+             gap: 10px;
+             padding: 12px 16px;
+             background: rgba(20, 8, 8, 0.8);
+             border: 1px solid rgba(255, 100, 100, 0.2);
+             border-radius: 8px;
+             font-size: 13px;
+             cursor: pointer;
+             transition: all 0.3s ease;
+             user-select: none;
+             color: #ddaaaa;
+             position: relative;
+             min-height: 44px;
+         }
+
+         .tag:hover {
+             background: rgba(40, 15, 15, 0.9);
+             border-color: rgba(255, 100, 100, 0.4);
+             transform: translateY(-1px);
+         }
+
+         .tag input[type="checkbox"] {
+             width: 16px;
+             height: 16px;
+             margin: 0;
+             appearance: none;
+             -webkit-appearance: none;
+             background: rgba(10, 5, 5, 0.8);
+             border: 1px solid rgba(255, 100, 100, 0.3);
+             border-radius: 3px;
+             cursor: pointer;
+             position: relative;
+             transition: all 0.3s ease;
+         }
+
+         .tag input[type="checkbox"]:hover {
+             border-color: rgba(255, 100, 100, 0.5);
+             background: rgba(20, 10, 10, 0.9);
+         }
+
+         .tag input[type="checkbox"]:checked {
+             background: linear-gradient(135deg, #cc2936, #aa1e2a);
+             border-color: #cc2936;
+             box-shadow: 0 0 8px rgba(204, 41, 54, 0.4);
+         }
+
+         .tag input[type="checkbox"]:checked::after {
+             content: '✓';
+             position: absolute;
+             top: -2px;
+             left: 2px;
+             font-size: 12px;
+             color: white;
+             font-weight: bold;
+         }
+
+         .tag span {
+             display: block;
+             font-weight: 500;
+             flex: 1;
+         }
+
+         .tag:has(input:checked) {
+             background: linear-gradient(135deg, #cc2936, #aa1e2a);
+             color: white;
+             border-color: #cc2936;
+             box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+             transform: translateY(-2px);
+         }
+
+        /* Subscription Tiers */
+        .subscription-tiers {
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .donation-header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .donation-header p {
+            font-size: 13px;
+            color: #aaa;
+            margin: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .billing-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 20px;
+            background: rgba(20, 8, 8, 0.6);
+            border-radius: 8px;
+            padding: 4px;
+            border: 1px solid rgba(255, 100, 100, 0.15);
+        }
+
+        .billing-option {
+            flex: 1;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .billing-option input[type="radio"] {
+            display: none;
+        }
+
+        .billing-option span {
+            display: block;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #aaa;
+            transition: all 0.3s ease;
+        }
+
+        .billing-option input[type="radio"]:checked + span {
+            background: rgba(204, 41, 54, 0.3);
+            color: #fff;
+            border: 1px solid rgba(255, 100, 100, 0.3);
+        }
+
+        .tier-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .tier-option {
+            cursor: pointer;
+        }
+
+        .tier-option input[type="radio"] {
+            display: none;
+        }
+
+                 .tier-card {
+             background: rgba(40, 15, 15, 0.7);
+             border: 2px solid rgba(255, 100, 100, 0.2);
+             border-radius: 8px;
+             padding: 16px 8px;
+             text-align: center;
+             transition: all 0.3s ease;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             min-height: 50px;
+         }
+
+        .tier-option:hover .tier-card {
+            background: rgba(50, 20, 20, 0.8);
+            border-color: rgba(255, 100, 100, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .tier-option.selected .tier-card {
+            background: linear-gradient(135deg, rgba(204, 41, 54, 0.4), rgba(170, 30, 42, 0.4));
+            border-color: rgba(255, 100, 100, 0.6);
+            box-shadow: 0 2px 10px rgba(204, 41, 54, 0.3);
+        }
+
+        .tier-price {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1;
+        }
+
+        
+
+        /* Blog Section Styles */
+        .blog-section {
+            padding: 80px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .blog-header h2 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .blog-header p {
+            font-size: 18px;
+            color: #aaa;
+            margin: 0;
+        }
+
+        .blog-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: rgba(20, 5, 5, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 100, 100, 0.15);
+            box-shadow: 0 8px 40px rgba(255, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(204, 41, 54, 0.6), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 50px rgba(255, 0, 0, 0.15);
+            border-color: rgba(255, 100, 100, 0.3);
+        }
+
+        .blog-card:hover::before {
+            opacity: 1;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 12px;
+        }
+
+        .blog-date {
+            color: #999;
+            font-weight: 500;
+        }
+
+        .blog-category {
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-card h3 {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .blog-card p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .blog-tag {
+            background: rgba(40, 10, 10, 0.8);
+            color: #ddaaaa;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            border: 1px solid rgba(255, 100, 100, 0.2);
+            font-weight: 500;
+        }
+
+        .read-more {
+            color: #cc2936;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .read-more:hover {
+            color: #ff4444;
+            transform: translateX(4px);
+        }
+
+        /* Hide blog cards that aren't on current page */
+        .blog-card {
+            display: none !important;
+        }
+
+        .blog-card[data-page="1"] {
+            display: block !important;
+        }
+
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .page-btn {
+            background: rgba(20, 5, 5, 0.95);
+            color: #fff;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(15px);
+        }
+
+        .page-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            border-color: #cc2936;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(204, 41, 54, 0.4);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .page-info {
+            color: #aaa;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .page-current {
+            color: #cc2936;
+            font-weight: 600;
+        }
+
+        /* Supporter Only Styles */
+        .supporter-only {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .supporter-only .blog-content {
+            filter: blur(3px);
+            pointer-events: none;
+            transition: filter 0.3s ease;
+        }
+
+        .supporter-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 5;
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.4);
+            border: 1px solid rgba(255, 100, 100, 0.3);
+        }
+
+        .supporter-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(20, 5, 5, 0.95), rgba(26, 0, 0, 0.95));
+            backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 4;
+            border-radius: 16px;
+        }
+
+        .unlock-content {
+            text-align: center;
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        .lock-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            opacity: 0.9;
+            color: #cc2936;
+        }
+
+        .unlock-content h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .unlock-content p {
+            color: #ddaaaa;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        .unlock-btn {
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            color: white;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
+
+        .unlock-btn:hover {
+            background: linear-gradient(135deg, #dd3a47, #bb252f);
+            border-color: #cc2936;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(204, 41, 54, 0.5);
+        }
+
+        .supporter-only:hover .blog-content {
+            filter: blur(2px);
+        }
+
+        @media (max-width: 600px) {
+            .center-box {
+                padding: 24px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+
+            .tag-list {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 8px;
+            }
+
+            .tag {
+                padding: 10px 12px;
+                font-size: 12px;
+                min-height: 40px;
+            }
+
+            .tier-options {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+                         .tier-card {
+                 padding: 12px 6px;
+                 min-height: 45px;
+             }
+
+             .tier-price {
+                 font-size: 14px;
+             }
+
+            .billing-option span {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .blog-section {
+                padding: 60px 20px;
+            }
+
+            .blog-header h2 {
+                font-size: 28px;
+            }
+
+            .blog-header p {
+                font-size: 16px;
+            }
+
+            .blog-grid {
+                gap: 20px;
+            }
+
+            .pagination {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .page-btn {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .supporter-badge {
+                top: 15px;
+                right: 15px;
+                padding: 4px 8px;
+                font-size: 10px;
+            }
+
+            .unlock-content {
+                padding: 16px;
+                max-width: 100%;
+            }
+
+            .lock-icon {
+                font-size: 28px;
+                margin-bottom: 8px;
+            }
+
+            .unlock-content h4 {
+                font-size: 16px;
+                margin-bottom: 6px;
+            }
+
+            .unlock-content p {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .unlock-btn {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .blog-card {
+                padding: 24px;
+            }
+
+            .blog-card h3 {
+                font-size: 20px;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+
+    <script>
+        // Enhanced particle system with pulsing and better visuals
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.createElement('canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.time = 0;
+                this.mouse = { x: 0, y: 0 };
+                
+                this.setup();
+                this.createParticles();
+                this.addMouseTracking();
+                this.animate();
+            }
+            
+            setup() {
+                const container = document.getElementById('particles');
+                container.appendChild(this.canvas);
+                
+                this.canvas.style.position = 'absolute';
+                this.canvas.style.top = '0';
+                this.canvas.style.left = '0';
+                this.canvas.style.pointerEvents = 'none';
+                
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                this.particles = [];
+                this.createParticles();
+            }
+            
+            addMouseTracking() {
+                window.addEventListener('mousemove', (e) => {
+                    this.mouse.x = e.clientX;
+                    this.mouse.y = e.clientY;
+                });
+            }
+            
+                         createParticles() {
+                 this.particles = []; // Clear existing particles
+                 const numParticles = Math.min(80, Math.floor((window.innerWidth * window.innerHeight) / 15000));
+                 
+                 for (let i = 0; i < numParticles; i++) {
+                     this.particles.push({
+                         x: Math.random() * this.canvas.width,
+                         y: Math.random() * this.canvas.height,
+                         vx: (Math.random() - 0.5) * 0.4,
+                         vy: (Math.random() - 0.5) * 0.4,
+                         size: Math.random() * 1.5 + 0.5,
+                         baseSize: Math.random() * 1.5 + 0.5,
+                         pulse: Math.random() * Math.PI * 2,
+                         pulseSpeed: 0.01 + Math.random() * 0.02,
+                         opacity: 0.15 + Math.random() * 0.25,
+                         hue: 350 + Math.random() * 20, // Deep red spectrum
+                         age: 0,
+                         maxAge: 800 + Math.random() * 400, // Random lifespan
+                         fadeOut: false
+                     });
+                 }
+             }
+
+             createNewParticle() {
+                 return {
+                     x: Math.random() * this.canvas.width,
+                     y: Math.random() * this.canvas.height,
+                     vx: (Math.random() - 0.5) * 0.8, // Higher initial momentum
+                     vy: (Math.random() - 0.5) * 0.8,
+                     size: Math.random() * 1.5 + 0.5,
+                     baseSize: Math.random() * 1.5 + 0.5,
+                     pulse: Math.random() * Math.PI * 2,
+                     pulseSpeed: 0.01 + Math.random() * 0.02,
+                     opacity: 0.15 + Math.random() * 0.25,
+                     hue: 350 + Math.random() * 20,
+                     age: 0,
+                     maxAge: 800 + Math.random() * 400,
+                     fadeOut: false
+                 };
+             }
+            
+            animate() {
+                this.time += 0.016;
+                
+                // Create fading trail effect
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                                // Update particles
+                for (let i = this.particles.length - 1; i >= 0; i--) {
+                    const particle = this.particles[i];
+                    
+                    // Age the particle
+                    particle.age++;
+                    
+                    // Start fading when approaching max age
+                    if (particle.age > particle.maxAge * 0.8) {
+                        particle.fadeOut = true;
+                    }
+                    
+                    // Update position
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    // Gentle mouse attraction
+                    const mouseDistance = Math.sqrt(
+                        Math.pow(particle.x - this.mouse.x, 2) + 
+                        Math.pow(particle.y - this.mouse.y, 2)
+                    );
+                    
+                    if (mouseDistance < 120) {
+                        const attraction = (120 - mouseDistance) / 120 * 0.0001;
+                        particle.vx += (this.mouse.x - particle.x) * attraction;
+                        particle.vy += (this.mouse.y - particle.y) * attraction;
+                    }
+                   
+                    // Apply lighter friction to maintain momentum longer
+                    particle.vx *= 0.9995;
+                    particle.vy *= 0.9995;
+                    
+                    // Add small random impulses to prevent stagnation
+                    if (Math.random() < 0.005) {
+                        particle.vx += (Math.random() - 0.5) * 0.1;
+                        particle.vy += (Math.random() - 0.5) * 0.1;
+                    }
+                    
+                    // Wrap around edges
+                    if (particle.x < -10) particle.x = this.canvas.width + 10;
+                    if (particle.x > this.canvas.width + 10) particle.x = -10;
+                    if (particle.y < -10) particle.y = this.canvas.height + 10;
+                    if (particle.y > this.canvas.height + 10) particle.y = -10;
+                    
+                    // Update pulse
+                    particle.pulse += particle.pulseSpeed;
+                    particle.size = particle.baseSize + Math.sin(particle.pulse) * 0.2;
+                    
+                    // Handle fading
+                    if (particle.fadeOut) {
+                        const fadeProgress = (particle.age - particle.maxAge * 0.8) / (particle.maxAge * 0.2);
+                        particle.opacity *= (1 - fadeProgress * 0.1);
+                    }
+                    
+                    // Remove dead particles and replace with new ones
+                    if (particle.age >= particle.maxAge || particle.opacity <= 0.01) {
+                        this.particles.splice(i, 1);
+                        this.particles.push(this.createNewParticle());
+                    }
+                }
+                
+                // Draw connections with gradient and varying opacity
+                this.particles.forEach((particle, i) => {
+                    this.particles.slice(i + 1).forEach(otherParticle => {
+                        const dx = particle.x - otherParticle.x;
+                        const dy = particle.y - otherParticle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                                                 if (distance < 100) {
+                             const opacity = (100 - distance) / 100 * 0.15;
+                             const gradient = this.ctx.createLinearGradient(
+                                 particle.x, particle.y, 
+                                 otherParticle.x, otherParticle.y
+                             );
+                             
+                             gradient.addColorStop(0, `hsla(${particle.hue}, 60%, 40%, ${opacity})`);
+                             gradient.addColorStop(1, `hsla(${otherParticle.hue}, 60%, 40%, ${opacity})`);
+                             
+                             this.ctx.beginPath();
+                             this.ctx.strokeStyle = gradient;
+                             this.ctx.lineWidth = Math.max(0.3, (100 - distance) / 100 * 1);
+                             this.ctx.moveTo(particle.x, particle.y);
+                             this.ctx.lineTo(otherParticle.x, otherParticle.y);
+                             this.ctx.stroke();
+                         }
+                    });
+                });
+                
+                                 // Draw particles with subtle glow effect
+                 this.particles.forEach(particle => {
+                     const gradient = this.ctx.createRadialGradient(
+                         particle.x, particle.y, 0,
+                         particle.x, particle.y, particle.size * 2
+                     );
+                     
+                     gradient.addColorStop(0, `hsla(${particle.hue}, 60%, 25%, ${particle.opacity})`);
+                     gradient.addColorStop(0.5, `hsla(${particle.hue}, 50%, 20%, ${particle.opacity * 0.2})`);
+                     gradient.addColorStop(1, `hsla(${particle.hue}, 40%, 15%, 0)`);
+                     
+                     this.ctx.beginPath();
+                     this.ctx.arc(particle.x, particle.y, particle.size * 2, 0, Math.PI * 2);
+                     this.ctx.fillStyle = gradient;
+                     this.ctx.fill();
+                     
+                     // Core particle
+                     this.ctx.beginPath();
+                     this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                     this.ctx.fillStyle = `hsla(${particle.hue}, 70%, 30%, ${particle.opacity})`;
+                     this.ctx.fill();
+                 });
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', () => {
+            new ParticleSystem();
+        });
+
+                 // Subscription tier pricing data
+         const tierPricing = {
+             free: { onetime: 'Free', monthly: 'Free', annual: 'Free' },
+             supporter: { onetime: '$5', monthly: '$5', annual: '$51' },
+             premium: { onetime: '$25', monthly: '$25', annual: '$255' },
+             pro: { onetime: '$75', monthly: '$75', annual: '$765' }
+         };
+
+        // Update pricing based on billing frequency
+        function updatePricing() {
+            const billingType = document.querySelector('input[name="billing"]:checked').value;
+            
+            document.querySelectorAll('.tier-option').forEach(option => {
+                const tier = option.dataset.tier;
+                const priceElement = option.querySelector('.tier-price');
+                priceElement.textContent = tierPricing[tier][billingType];
+            });
+        }
+
+        // Handle billing frequency changes
+        document.querySelectorAll('input[name="billing"]').forEach(radio => {
+            radio.addEventListener('change', updatePricing);
+        });
+
+        // Handle tier selection
+        document.querySelectorAll('input[name="tier"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Remove selected class from all options
+                document.querySelectorAll('.tier-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                
+                // Add selected class to current option
+                this.closest('.tier-option').classList.add('selected');
+            });
+        });
+
+        // Handle tier option clicks (including the label)
+        document.querySelectorAll('.tier-option').forEach(option => {
+            option.addEventListener('click', function(e) {
+                if (e.target.type !== 'radio') {
+                    const radio = this.querySelector('input[type="radio"]');
+                    radio.checked = true;
+                    radio.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+
+        document.getElementById('emailForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const preferences = Array.from(document.querySelectorAll('input[name="preferences"]:checked')).map(cb => cb.value);
+            const tier = document.querySelector('input[name="tier"]:checked').value;
+            const billing = document.querySelector('input[name="billing"]:checked').value;
+            
+            // Submit email
+            const emailData = new FormData();
+            emailData.append('email', email);
+            emailData.append('tier', tier);
+            emailData.append('billing', billing);
+            
+            const emailResponse = await fetch('/submit_email', {
+                method: 'POST',
+                body: emailData
+            });
+            
+            const emailResult = await emailResponse.json();
+            
+            // Submit preferences if any are selected
+            if (preferences.length > 0) {
+                const surveyData = new FormData();
+                surveyData.append('email', email);
+                surveyData.append('frequency', 'weekly'); // default frequency
+                preferences.forEach(pref => surveyData.append('preferences', pref));
+                
+                await fetch('/submit_survey', {
+                    method: 'POST',
+                    body: surveyData
+                });
+            }
+            
+            // Show response
+            const responseDiv = document.getElementById('response');
+            responseDiv.style.display = 'block';
+            responseDiv.textContent = emailResult.message;
+            responseDiv.className = 'response ' + (emailResult.success ? 'success' : 'error');
+            
+            if (emailResult.success) {
+                this.reset();
+                // Uncheck all preference tags
+                document.querySelectorAll('input[name="preferences"]').forEach(cb => cb.checked = false);
+                                 // Reset tier selection to free
+                 document.querySelector('input[name="tier"][value="free"]').checked = true;
+                 document.querySelector('input[name="billing"][value="monthly"]').checked = true;
+                document.querySelectorAll('.tier-option').forEach(option => option.classList.remove('selected'));
+                document.querySelector('.tier-option[data-tier="free"]').classList.add('selected');
+                updatePricing();
+            }
+        });
+
+        // Pagination functionality
+        let currentPage = 1;
+        const totalPages = 3;
+
+        function changePage(direction) {
+            const newPage = currentPage + direction;
+            
+            if (newPage < 1 || newPage > totalPages) {
+                return;
+            }
+            
+            currentPage = newPage;
+            updatePagination();
+        }
+
+        function updatePagination() {
+            // Hide all blog cards
+            document.querySelectorAll('.blog-card').forEach(card => {
+                card.style.setProperty('display', 'none', 'important');
+            });
+            
+            // Show only cards for current page
+            document.querySelectorAll(`.blog-card[data-page="${currentPage}"]`).forEach(card => {
+                card.style.setProperty('display', 'block', 'important');
+            });
+            
+            // Update pagination controls
+            document.querySelector('.page-current').textContent = currentPage;
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+        }
+
+        // Initialize pagination
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePagination();
+        });
+
+    </script>
+</body>
+</html>

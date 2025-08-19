@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch - One-Click Deep Signal Deployment</title>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <!-- Launch Configuration Section -->
+    <div class="launch-section">
+        <div class="container">
+            <div class="center-box">
+                <div class="header">
+                    <div class="profile-pic">
+                        <div class="avatar">🚀</div>
+                    </div>
+                </div>
+                <div class="header-text">
+                    <h1>Launch Your Deep Signal Site</h1>
+                    <p>Deploy your own direct audience platform in minutes</p>
+                </div>
+                
+                <form id="deployForm" class="deploy-form">
+                    <!-- Site Configuration -->
+                    <div class="form-section">
+                        <h3>Site Configuration</h3>
+                        
+                        <div class="form-group">
+                            <label for="siteName">Site Name</label>
+                            <input type="text" id="siteName" name="siteName" required placeholder="Your Name or Brand">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="siteSubtitle">Site Subtitle</label>
+                            <input type="text" id="siteSubtitle" name="siteSubtitle" required placeholder="Your tagline or mission statement">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="domain">Custom Domain (Optional)</label>
+                            <input type="text" id="domain" name="domain" placeholder="yourdomain.com">
+                            <small>Leave blank to use a generated subdomain</small>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Categories -->
+                    <div class="form-section">
+                        <h3>Content Categories</h3>
+                        <p class="section-desc">Define what types of content you'll share</p>
+                        
+                        <div class="categories-input">
+                            <div class="category-item">
+                                <input type="text" name="category" placeholder="e.g., Tech Updates" required>
+                                <button type="button" class="remove-category">×</button>
+                            </div>
+                        </div>
+                        
+                        <button type="button" id="addCategory" class="add-btn">Add Category</button>
+                    </div>
+                    
+                    <!-- Deployment Platform -->
+                    <div class="form-section">
+                        <h3>Choose Your Platform</h3>
+                        <p class="section-desc">Select where you want to deploy your site</p>
+                        
+                        <div class="platform-grid">
+                            <label class="platform-option">
+                                <input type="radio" name="platform" value="deepsignal" required>
+                                <div class="platform-card">
+                                    <div class="platform-icon">🔗</div>
+                                    <h4>Deep Signal Hosting</h4>
+                                    <p>Fully managed hosting with automatic updates</p>
+                                    <span class="platform-price">$9/month</span>
+                                </div>
+                            </label>
+                            
+                            <label class="platform-option">
+                                <input type="radio" name="platform" value="digitalocean" required>
+                                <div class="platform-card">
+                                    <div class="platform-icon">🌊</div>
+                                    <h4>DigitalOcean</h4>
+                                    <p>Deploy to your DigitalOcean account</p>
+                                    <span class="platform-price">$5/month</span>
+                                </div>
+                            </label>
+                            
+                            <label class="platform-option">
+                                <input type="radio" name="platform" value="aws" required>
+                                <div class="platform-card">
+                                    <div class="platform-icon">☁️</div>
+                                    <h4>Amazon AWS</h4>
+                                    <p>Deploy to AWS with your credentials</p>
+                                    <span class="platform-price">Pay-as-you-go</span>
+                                </div>
+                            </label>
+                            
+                            <label class="platform-option">
+                                <input type="radio" name="platform" value="azure" required>
+                                <div class="platform-card">
+                                    <div class="platform-icon">🔷</div>
+                                    <h4>Microsoft Azure</h4>
+                                    <p>Deploy to Azure with your account</p>
+                                    <span class="platform-price">Pay-as-you-go</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Platform Credentials (shown based on selection) -->
+                    <div class="form-section credentials-section" id="credentialsSection" style="display: none;">
+                        <h3>Platform Credentials</h3>
+                        <p class="section-desc">Enter your platform credentials for deployment</p>
+                        
+                        <!-- DigitalOcean Credentials -->
+                        <div class="platform-credentials" id="digitaloceanCreds" style="display: none;">
+                            <div class="form-group">
+                                <label for="doToken">DigitalOcean API Token</label>
+                                <input type="password" id="doToken" name="doToken" placeholder="Your DigitalOcean API token">
+                            </div>
+                        </div>
+                        
+                        <!-- AWS Credentials -->
+                        <div class="platform-credentials" id="awsCreds" style="display: none;">
+                            <div class="form-group">
+                                <label for="awsAccessKey">AWS Access Key ID</label>
+                                <input type="text" id="awsAccessKey" name="awsAccessKey" placeholder="AKIA...">
+                            </div>
+                            <div class="form-group">
+                                <label for="awsSecretKey">AWS Secret Access Key</label>
+                                <input type="password" id="awsSecretKey" name="awsSecretKey" placeholder="Your AWS secret key">
+                            </div>
+                            <div class="form-group">
+                                <label for="awsRegion">AWS Region</label>
+                                <select id="awsRegion" name="awsRegion">
+                                    <option value="us-east-1">US East (N. Virginia)</option>
+                                    <option value="us-west-2">US West (Oregon)</option>
+                                    <option value="eu-west-1">Europe (Ireland)</option>
+                                    <option value="ap-southeast-1">Asia Pacific (Singapore)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Azure Credentials -->
+                        <div class="platform-credentials" id="azureCreds" style="display: none;">
+                            <div class="form-group">
+                                <label for="azureSubscriptionId">Azure Subscription ID</label>
+                                <input type="text" id="azureSubscriptionId" name="azureSubscriptionId" placeholder="Your Azure subscription ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="azureClientId">Azure Client ID</label>
+                                <input type="text" id="azureClientId" name="azureClientId" placeholder="Your Azure client ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="azureClientSecret">Azure Client Secret</label>
+                                <input type="password" id="azureClientSecret" name="azureClientSecret" placeholder="Your Azure client secret">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Launch Button -->
+                    <div class="launch-container">
+                        <button type="submit" class="launch-btn">
+                            <span class="launch-text">🚀 Launch My Site</span>
+                            <span class="launch-loading" style="display: none;">⏳ Deploying...</span>
+                        </button>
+                        <p class="launch-note">Deployment typically takes 2-3 minutes</p>
+                    </div>
+                </form>
+                
+                <!-- Response Message -->
+                <div id="response" class="response"></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at center, #1a0000 0%, #0d0000 50%, #000000 100%);
+            color: #fff;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Particle background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .particle.connected {
+            background: rgba(0, 123, 255, 0.6);
+        }
+
+        .connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(0, 123, 255, 0.2), transparent);
+            pointer-events: none;
+        }
+
+        .launch-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .center-box {
+            background: rgba(20, 5, 5, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(255, 0, 0, 0.1), 0 0 80px rgba(255, 0, 0, 0.05);
+            border: 1px solid rgba(255, 100, 100, 0.15);
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .profile-pic {
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
+
+        .header-text {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header-text h1 {
+            margin-bottom: 8px;
+            font-size: 32px;
+            line-height: 1.2;
+            word-wrap: break-word;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .header-text p {
+            margin-bottom: 0;
+            font-size: 16px;
+            color: #aaa;
+            line-height: 1.3;
+        }
+
+        .deploy-form {
+            text-align: left;
+        }
+
+        .form-section {
+            margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255, 100, 100, 0.1);
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .form-section h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .section-desc {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #ccaaaa;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: rgba(40, 10, 10, 0.8);
+            color: #fff;
+        }
+
+        .form-group input::placeholder {
+            color: #cc8888;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #ff4444;
+            box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.2);
+        }
+
+        .form-group small {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Categories */
+        .categories-input {
+            margin-bottom: 20px;
+        }
+
+        .category-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            align-items: stretch;
+            background: rgba(40, 10, 10, 0.6);
+            border: 1px solid rgba(255, 100, 100, 0.2);
+            border-radius: 8px;
+            padding: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .category-item:hover {
+            background: rgba(50, 15, 15, 0.7);
+            border-color: rgba(255, 100, 100, 0.3);
+        }
+
+        .category-item input {
+            flex: 1;
+            margin-bottom: 0;
+            border: none;
+            background: transparent;
+            padding: 12px 16px;
+            color: #fff;
+        }
+
+        .category-item input:focus {
+            box-shadow: none;
+            border: none;
+            background: rgba(60, 15, 15, 0.8);
+            color: #fff;
+        }
+
+        .category-item input::placeholder {
+            color: #cc8888;
+        }
+
+        .remove-category {
+            background: rgba(220, 53, 69, 0.8);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            margin: 2px;
+            font-weight: bold;
+        }
+
+        .remove-category:hover {
+            background: rgba(220, 53, 69, 1);
+            transform: scale(1.05);
+        }
+
+        .add-btn {
+            background: linear-gradient(135deg, rgba(204, 41, 54, 0.2), rgba(170, 30, 42, 0.2));
+            color: #fff;
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .add-btn:hover {
+            background: linear-gradient(135deg, rgba(204, 41, 54, 0.4), rgba(170, 30, 42, 0.4));
+            border-color: rgba(255, 100, 100, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(204, 41, 54, 0.3);
+        }
+
+        .add-btn:before {
+            content: '+';
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Platform Selection */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .platform-option {
+            cursor: pointer;
+        }
+
+        .platform-option input[type="radio"] {
+            display: none;
+        }
+
+        .platform-card {
+            background: rgba(40, 10, 10, 0.8);
+            border: 2px solid rgba(255, 100, 100, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .platform-card:hover {
+            background: rgba(60, 15, 15, 0.9);
+            border-color: rgba(255, 100, 100, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .platform-option input[type="radio"]:checked + .platform-card {
+            background: linear-gradient(135deg, rgba(204, 41, 54, 0.3), rgba(170, 30, 42, 0.3));
+            border-color: #cc2936;
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
+
+        .platform-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .platform-card h4 {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .platform-card p {
+            font-size: 13px;
+            color: #ccc;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .platform-price {
+            font-size: 14px;
+            color: #cc2936;
+            font-weight: 600;
+        }
+
+        /* Credentials Section */
+        .credentials-section {
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Launch Button */
+        .launch-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .launch-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #cc2936, #aa1e2a);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(204, 41, 54, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .launch-btn:hover {
+            background: linear-gradient(135deg, #dd3a47, #bb252f);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(204, 41, 54, 0.5);
+        }
+
+        .launch-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .launch-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 12px;
+        }
+
+        /* Response */
+        .response {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: none;
+            text-align: center;
+        }
+
+        .response.success {
+            background: rgba(40, 167, 69, 0.2);
+            color: #4caf50;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+
+        .response.error {
+            background: rgba(220, 53, 69, 0.2);
+            color: #f44336;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+
+        .response.info {
+            background: rgba(0, 123, 255, 0.2);
+            color: #007bff;
+            border: 1px solid rgba(0, 123, 255, 0.3);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .center-box {
+                padding: 32px 24px;
+            }
+            
+            .header-text h1 {
+                font-size: 28px;
+            }
+
+            .platform-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .platform-card {
+                min-height: 140px;
+                padding: 16px;
+            }
+
+            .category-item {
+                flex-direction: row;
+                align-items: stretch;
+                gap: 8px;
+                padding: 2px;
+            }
+
+            .category-item input {
+                padding: 10px 12px;
+                font-size: 15px;
+            }
+
+            .remove-category {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <script>
+        // Enhanced particle system (same as mockup)
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.createElement('canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.time = 0;
+                this.mouse = { x: 0, y: 0 };
+                
+                this.setup();
+                this.createParticles();
+                this.addMouseTracking();
+                this.animate();
+            }
+            
+            setup() {
+                const container = document.getElementById('particles');
+                container.appendChild(this.canvas);
+                
+                this.canvas.style.position = 'absolute';
+                this.canvas.style.top = '0';
+                this.canvas.style.left = '0';
+                this.canvas.style.pointerEvents = 'none';
+                
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+            }
+            
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                this.particles = [];
+                this.createParticles();
+            }
+            
+            addMouseTracking() {
+                window.addEventListener('mousemove', (e) => {
+                    this.mouse.x = e.clientX;
+                    this.mouse.y = e.clientY;
+                });
+            }
+            
+            createParticles() {
+                this.particles = [];
+                const numParticles = Math.min(60, Math.floor((window.innerWidth * window.innerHeight) / 20000));
+                
+                for (let i = 0; i < numParticles; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.4,
+                        vy: (Math.random() - 0.5) * 0.4,
+                        size: Math.random() * 1.5 + 0.5,
+                        baseSize: Math.random() * 1.5 + 0.5,
+                        pulse: Math.random() * Math.PI * 2,
+                        pulseSpeed: 0.01 + Math.random() * 0.02,
+                        opacity: 0.15 + Math.random() * 0.25,
+                        hue: 350 + Math.random() * 20,
+                        age: 0,
+                        maxAge: 800 + Math.random() * 400,
+                        fadeOut: false
+                    });
+                }
+            }
+
+            createNewParticle() {
+                return {
+                    x: Math.random() * this.canvas.width,
+                    y: Math.random() * this.canvas.height,
+                    vx: (Math.random() - 0.5) * 0.8,
+                    vy: (Math.random() - 0.5) * 0.8,
+                    size: Math.random() * 1.5 + 0.5,
+                    baseSize: Math.random() * 1.5 + 0.5,
+                    pulse: Math.random() * Math.PI * 2,
+                    pulseSpeed: 0.01 + Math.random() * 0.02,
+                    opacity: 0.15 + Math.random() * 0.25,
+                    hue: 350 + Math.random() * 20,
+                    age: 0,
+                    maxAge: 800 + Math.random() * 400,
+                    fadeOut: false
+                };
+            }
+            
+            animate() {
+                this.time += 0.016;
+                
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                for (let i = this.particles.length - 1; i >= 0; i--) {
+                    const particle = this.particles[i];
+                    
+                    particle.age++;
+                    
+                    if (particle.age > particle.maxAge * 0.8) {
+                        particle.fadeOut = true;
+                    }
+                    
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    const mouseDistance = Math.sqrt(
+                        Math.pow(particle.x - this.mouse.x, 2) + 
+                        Math.pow(particle.y - this.mouse.y, 2)
+                    );
+                    
+                    if (mouseDistance < 120) {
+                        const attraction = (120 - mouseDistance) / 120 * 0.0001;
+                        particle.vx += (this.mouse.x - particle.x) * attraction;
+                        particle.vy += (this.mouse.y - particle.y) * attraction;
+                    }
+                   
+                    particle.vx *= 0.9995;
+                    particle.vy *= 0.9995;
+                    
+                    if (Math.random() < 0.005) {
+                        particle.vx += (Math.random() - 0.5) * 0.1;
+                        particle.vy += (Math.random() - 0.5) * 0.1;
+                    }
+                    
+                    if (particle.x < -10) particle.x = this.canvas.width + 10;
+                    if (particle.x > this.canvas.width + 10) particle.x = -10;
+                    if (particle.y < -10) particle.y = this.canvas.height + 10;
+                    if (particle.y > this.canvas.height + 10) particle.y = -10;
+                    
+                    particle.pulse += particle.pulseSpeed;
+                    particle.size = particle.baseSize + Math.sin(particle.pulse) * 0.2;
+                    
+                    if (particle.fadeOut) {
+                        const fadeProgress = (particle.age - particle.maxAge * 0.8) / (particle.maxAge * 0.2);
+                        particle.opacity *= (1 - fadeProgress * 0.1);
+                    }
+                    
+                    if (particle.age >= particle.maxAge || particle.opacity <= 0.01) {
+                        this.particles.splice(i, 1);
+                        this.particles.push(this.createNewParticle());
+                    }
+                }
+                
+                this.particles.forEach((particle, i) => {
+                    this.particles.slice(i + 1).forEach(otherParticle => {
+                        const dx = particle.x - otherParticle.x;
+                        const dy = particle.y - otherParticle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 100) {
+                            const opacity = (100 - distance) / 100 * 0.15;
+                            const gradient = this.ctx.createLinearGradient(
+                                particle.x, particle.y, 
+                                otherParticle.x, otherParticle.y
+                            );
+                            
+                            gradient.addColorStop(0, `hsla(${particle.hue}, 60%, 40%, ${opacity})`);
+                            gradient.addColorStop(1, `hsla(${otherParticle.hue}, 60%, 40%, ${opacity})`);
+                            
+                            this.ctx.beginPath();
+                            this.ctx.strokeStyle = gradient;
+                            this.ctx.lineWidth = Math.max(0.3, (100 - distance) / 100 * 1);
+                            this.ctx.moveTo(particle.x, particle.y);
+                            this.ctx.lineTo(otherParticle.x, otherParticle.y);
+                            this.ctx.stroke();
+                        }
+                    });
+                });
+                
+                this.particles.forEach(particle => {
+                    const gradient = this.ctx.createRadialGradient(
+                        particle.x, particle.y, 0,
+                        particle.x, particle.y, particle.size * 2
+                    );
+                    
+                    gradient.addColorStop(0, `hsla(${particle.hue}, 60%, 25%, ${particle.opacity})`);
+                    gradient.addColorStop(0.5, `hsla(${particle.hue}, 50%, 20%, ${particle.opacity * 0.2})`);
+                    gradient.addColorStop(1, `hsla(${particle.hue}, 40%, 15%, 0)`);
+                    
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size * 2, 0, Math.PI * 2);
+                    this.ctx.fillStyle = gradient;
+                    this.ctx.fill();
+                    
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `hsla(${particle.hue}, 70%, 30%, ${particle.opacity})`;
+                    this.ctx.fill();
+                });
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        
+        // Initialize particles when page loads
+        window.addEventListener('load', () => {
+            new ParticleSystem();
+        });
+
+        // Add category functionality
+        document.getElementById('addCategory').addEventListener('click', function() {
+            const categoriesInput = document.querySelector('.categories-input');
+            const categoryItem = document.createElement('div');
+            categoryItem.className = 'category-item';
+            categoryItem.innerHTML = `
+                <input type="text" name="category" placeholder="e.g., Tech Updates" required>
+                <button type="button" class="remove-category">×</button>
+            `;
+            categoriesInput.appendChild(categoryItem);
+            
+            // Add remove functionality
+            categoryItem.querySelector('.remove-category').addEventListener('click', function() {
+                categoryItem.remove();
+            });
+        });
+
+        // Platform selection and credentials
+        document.querySelectorAll('input[name="platform"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const credentialsSection = document.getElementById('credentialsSection');
+                const allCreds = document.querySelectorAll('.platform-credentials');
+                
+                // Hide all credential sections
+                allCreds.forEach(cred => cred.style.display = 'none');
+                
+                if (this.value !== 'deepsignal') {
+                    credentialsSection.style.display = 'block';
+                    const targetCreds = document.getElementById(this.value + 'Creds');
+                    if (targetCreds) {
+                        targetCreds.style.display = 'block';
+                    }
+                } else {
+                    credentialsSection.style.display = 'none';
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('deployForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const launchBtn = document.querySelector('.launch-btn');
+            const launchText = document.querySelector('.launch-text');
+            const launchLoading = document.querySelector('.launch-loading');
+            const responseDiv = document.getElementById('response');
+            
+            // Show loading state
+            launchBtn.disabled = true;
+            launchText.style.display = 'none';
+            launchLoading.style.display = 'inline';
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const categories = Array.from(document.querySelectorAll('input[name="category"]'))
+                .map(input => input.value.trim())
+                .filter(value => value.length > 0);
+            
+            const deploymentData = {
+                siteName: formData.get('siteName'),
+                siteSubtitle: formData.get('siteSubtitle'),
+                domain: formData.get('domain'),
+                categories: categories,
+                platform: formData.get('platform')
+            };
+            
+            // Add platform-specific credentials
+            const platform = formData.get('platform');
+            if (platform === 'digitalocean') {
+                deploymentData.credentials = {
+                    token: formData.get('doToken')
+                };
+            } else if (platform === 'aws') {
+                deploymentData.credentials = {
+                    accessKey: formData.get('awsAccessKey'),
+                    secretKey: formData.get('awsSecretKey'),
+                    region: formData.get('awsRegion')
+                };
+            } else if (platform === 'azure') {
+                deploymentData.credentials = {
+                    subscriptionId: formData.get('azureSubscriptionId'),
+                    clientId: formData.get('azureClientId'),
+                    clientSecret: formData.get('azureClientSecret')
+                };
+            }
+            
+            // Simulate deployment process
+            try {
+                await new Promise(resolve => setTimeout(resolve, 3000)); // Simulate deployment time
+                
+                // Success response
+                responseDiv.className = 'response success';
+                responseDiv.style.display = 'block';
+                
+                const deployedUrl = deploymentData.domain || 
+                    `${deploymentData.siteName.toLowerCase().replace(/[^a-z0-9]/g, '-')}.deepsignal.app`;
+                
+                responseDiv.innerHTML = `
+                    <h4>🎉 Deployment Successful!</h4>
+                    <p>Your Deep Signal site has been deployed and is now live at:</p>
+                    <p><strong><a href="https://${deployedUrl}" target="_blank" style="color: #4caf50;">${deployedUrl}</a></strong></p>
+                    <p>Check your email for setup instructions and admin access details.</p>
+                `;
+                
+                // Reset form
+                this.reset();
+                document.getElementById('credentialsSection').style.display = 'none';
+                
+            } catch (error) {
+                // Error response
+                responseDiv.className = 'response error';
+                responseDiv.style.display = 'block';
+                responseDiv.innerHTML = `
+                    <h4>❌ Deployment Failed</h4>
+                    <p>There was an error deploying your site. Please check your credentials and try again.</p>
+                    <p>Error: ${error.message || 'Unknown deployment error'}</p>
+                `;
+            } finally {
+                // Reset button state
+                launchBtn.disabled = false;
+                launchText.style.display = 'inline';
+                launchLoading.style.display = 'none';
+            }
+        });
+
+        // Add remove functionality to initial category
+        document.querySelector('.remove-category').addEventListener('click', function() {
+            // Don't remove if it's the only category
+            if (document.querySelectorAll('.category-item').length > 1) {
+                this.parentElement.remove();
+            }
+        });
+    </script>
+</body>
+</html>
